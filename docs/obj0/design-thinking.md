@@ -14,54 +14,43 @@
 
 En esta primera fase, tras haber pensado en muchos problemas que pueden ser de interés, me he quedado con el siguiente que desgloso en las siguientes preguntas:
 
-*Pregunta 1: ¿Cómo puede un equipo de fútbol mejorar su rendimiento y obtener mejores resultados?*
+*Pregunta 1: ¿Cómo puede un profesor saber si los contenidos que imparte están siendo estudiados correctamente por sus alumnos?*
 
-*Respuesta 1: Evidentemente, entrenando, preparando estrategias, corrigiendo los errores, observando las cualidades de cada jugador...*
-
-
-
-*Pregunta 2: ¿Cómo podemos mejorar el entrenamiento de los equipos de fútbol para precisar más la respuesta de la pregunta anterior?*
-
-*Respuesta 2: Los datos estadísticos de cada jugador, son medibles. Se pueden definir un rango (por ejemplo de 0-100) donde quedan reflejados la velocidad, control de pase, regate, potencia física, entre otros. Estos datos pueden llegar a ser muy útiles proporcionando el siguiente valor:*
-
-* *Con los atributos medibles anteriores, se puede definir una "calidad" individual del jugador.*
-* *Estos datos se pueden tratar de muchas maneras. Lo más evidente es comparar con los atributos del resto de la plantilla, y pueden ser agrupados para la obtención de otros valores. Ej: Ver qué tipo de carencias se tienen en el equipo de forma global, o discutir si para una posición concreta hay algún jugador que despunte / esté muy alejado con respecto el nivel del resto.*
-
-* *Con lo anterior, se pueden diseñar grupos de trabajo específicos para un jugador, un grupo de jugadores, o todo el equipo, con una serie de ejercicios que potencien las cualidades que se deseen.*
-
-  
-
-*Pregunta 3: Una vez hayan finalizado este entrenamiento, ¿se pueden extraer algunas conclusiones o datos de interés?*
-
-*Respuesta 3: Cuando se hayan terminado los ejercicios, el entrenador puede valorar el rendimiento de cada jugador otorgándole una calificación (pongamos por el momento de A a F siendo "A" sobresaliente y "F" suspenso/no superado), actualizando las stats de cada uno. Extrayendo esta información renovada se puede generar un "11 ideal" que puede ayudar al entrenador a tomar una decisión final.*
+*Respuesta 1: A través de exámenes/controles con preguntas sobre dichos contenidos.*
 
 
 
-*Pregunta 4: Y cuando haya finalizado un partido... ¿Qué se puede hacer más?*
+*Pregunta 2: ¿Se puede medir de manera estadística el rendimiento general de la clase?*
 
-*Respuesta 4: Al igual que en los entrenamientos, el entrenador puede calificar el rendimiento individual de los que han jugado el partido, además de utilizar los datos del partido a nivel grupal para que también se sugieran otros tipos de entrenamiento (para corregir errores o plantear todo tipo de estrategias).*
+*Respuesta 2: Por supuesto, a través de las calificaciones de dichos exámenes.*
 
 
 
-*Pregunta 5: ¿Qué pasa si tengo jugadores lesionados?*
+*Pregunta 3: Si el número de alumnos en la clase es considerable, corregir tantos exámenes y hacer cálculos es una tarea tediosa y además imposible para hacer un buen seguimiento... ¿se podría optimizar de alguna manera?*
 
-*Respuesta 5: Los jugadores lesionados no formarán parte de los entenamientos con el grupo, se encargarían de realizar trabajo individual de recuperación hasta que haya finalizado dicha lesión.*
+*Respuesta 3: El uso de plataformas online para la realización de las pruebas puede ser una buena solución, ya que resuelve la pregunta anterior, permitiendo analizar las calificaciones obtenidas con cálculos estadísticos sencillos.*
+
+
+
+*Pregunta 4: Hay algunas asignaturas (por ejemplo Lengua, Historia) donde no se pueden realizar preguntas en formato test y por tanto la corrección seguiría siendo manual... ¿hay soluciones viables para reducir el tiempo de corrección / automatizarlo?*
+
+*Respuesta 4: Existen algoritmos de comparación de textos que pueden ser de utilidad para esta tarea. El profesor podría simplemente preparar una plantilla con sus respuestas, que serían comparadas con la de los alumnos cuando las repondan, dando un coeficiente de similitud entre ambas.*
 
 ****
 
 #### Fase 2: Definir
 
-***¿Cuál es el problema exactamente?: Optimizar los recursos deportivos de un equipo de fútbol a través de una planificación adecuada de entrenamientos.***
+***¿Cuál es el problema exactamente?: ***
 
-***¿Quién es el interesado?: La entidad deportiva / equipo de fútbol.***
+***¿Quién es el interesado?: Un profesor de instituto/bachillerato***
 
-***¿Quiénes son los usuarios?: El entrenador / cuerpo técnico.***
+***¿Quiénes son los usuarios?: El profesor utiliza la solución para proponer exámenes a sus alumnos. Los alumnos utilizan la solución para responder a  dicha prueba.***
 
-***¿Qué reciben los usuarios?: Reciben informes acerca de los jugadores de la plantilla, su evolución como futbolista, además de una potencial candidatura para el 11 titular.***
+***¿Qué reciben los usuarios?: Los alumnos reciben una calificación en función de cómo de cerca han estado de la respuesta que ha dado el profesor. El profesor recibe una serie de datos estadísticos a través del análisis de los resultados de los exámenes.***
 
 ****
 
 #### Fase 3: Idear
 
-No voy a indicar aquí cómo resolvería explícitamente este problema. Sin embargo, creo que es evidente que este problema puede ser solucionado con un producto que requiera de una nube, ya que se necesita una cantidad considerable de datos que requieren ser analizados, actualizados y procesados para extraer el conocimiento que el cliente necesita y que ya hemos comentado con anterioridad.
+No voy a indicar aquí cómo resolvería explícitamente este problema aunque ya lo he mencionado con ligereza en la *Respuesta 4*. La lógica de negocio que habría detrás de esta solución es interesante en otros muchos ámbitos (como el de detección de plagio), y considero que puede ser de utilidad para resolver este problema.
 

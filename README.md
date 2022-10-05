@@ -1,4 +1,4 @@
-# SUPERCATCH
+# SuperCatch
 
 
 
@@ -14,15 +14,14 @@
 
 ### Problema a resolver
 
-En el deporte, la disciplina y el entrenamiento son dos máximas que se deben cumplir si se quieren conseguir unos determinados objetivos. Por supuesto, todos queremos evolucionar a una versión mejor de nosotros mismos, y eso es un factor clave en los deportes individuales/grupales, pero a veces nos cuesta seguir una hoja de ruta para ello. En el ámbito del fútbol (en cualquier categoría), gestionar este caso a toda una plantilla puede no ser una tarea tan sencilla, especialmente teniendo características de jugadores tan variadas. Es por tanto que el problema a resolver, puede ser expresada de la siguiente forma: ¿cómo puede un entrenador elegir adecuadamente los ejercicios de entrenamiento para una sesión, mejorando las debilidades y que ayude a conseguir efectos de mejoría en la plantilla?
+En la ESO / Bachillerato, se realizan muchos exámenes para comprobar que el alumnado entiende los contenidos que se imparten en las asignaturas. Sin embargo, no todas ellas se pueden realizar en un formato tipo test con opciones, si no que se requiere respuestas complejas en lenguaje natural, como puede ser el caso de Historia. El problema reside en que la corrección de dichos exámenes es una tarea en la que se tarda mucho tiempo, ya que no es una tarea puramente objetiva, lo que impide que el profesor se pueda dedicar a otras tareas, o que realice controles / tareas de seguimiento de la clase de forma más periódica para poder ayudar a sus alumnos en su fase de aprendizaje.
 
 ### Solución propuesta
 
-Se plantea una solución al problema de la optimización y planificación de entrenamientos en forma de aplicación desplegada en la nube tal que:
+Se propone una solución en forma de plataforma residente en la nube con el objetivo de:
 
-* Con los datos de los atributos de los jugadores y una lista de ejercicios de entrenamiento, analizar las características de la plantilla y decidir una planificación de una sesión diaría de entrenamiento equilibrada y acorde con las necesidades de la plantilla.
-* Permitir calificar a los jugadores observando una tendencia evolutiva en ellos, generando informes para cada uno en caso de que el entrenador lo requiera.
-* Sugerir un 11 titular en función de los resultados y de la mejora de los atributos.
+1. Automatizar la tarea de corrección de exámenes / controles que requieren respuestas en lenguaje natural.
+2. Deducir el rendimiento general de la clase a través de los resultados de dichos controles.
 
 ****
 
@@ -41,33 +40,31 @@ Finalmente, una vez se ha desarrollado la motivación de la aplicación, se real
 
 * [x] ***¿Se trata de un problema real del que se tenga conocimiento personal?***
 
-    No es un problema que me involucre a mi personalmente ni directamente. Sin embargo, además de obtener testimonios a través de uno de mis mejores amigos de toda la vida (que es jugador de fútbol en un equipo regional), también he podido comprobar de primera mano cuando le he acompañado en alguna que otra ocasión, cómo se realizaban dichos entrenamientos. Ahí fue cuando pensé en esta solución para optimizar las rutinas que hacían diariamente, con el objetivo de ayudar al cuerpo técnico a un posible mejor rendimiento. 
-
-    También considero que esta solución podría ser extrapolable al ámbito personal, pues todos siempre hemos tenido la necesidad de organizarnos adecuadamente una rutina de ejercicio que garantice que sea equilibrada, efectiva, y atendiendo a nuestros propios atributos.
+    Sí. Obviamente, yo no soy profesor de ninguna asignatura (al menos por ahora), pero durante la etapa de la ESO siempre he sido muy cercano con los profesores, y he percibido en primera persona la cantidad de tiempo que tardan en corregir ciertos exámenes en los que se necesita concentración y una cierta interpretación debido a la complejidad de la respuesta que se pide (por ejemplo en Historia). Además, dichos profesores me han comentado en varias ocasiones esta situación.
 
     
 
 * [x] ***¿Se trata de un problema que para solucionar requiera el despliegue de una aplicación en la nube?***
-   
-   Por supuesto. Se requiere de un volumen de datos considerable (fichas, atributos de jugadores, listado de entrenamientos,..) además de determinados cálculos que hacen que la nube sea el lugar idóneo para esta solución. También hay que tener en cuenta que el equipo no tiene por qué entrenar siempre en el mismo lugar, por ejemplo si juega de visitante es posible que acuda a otras instalaciones, por tanto es esencial que se garantice el acceso desde cualquier parte.
+  
+   Por supusto. Es el lugar idóneo para el mismo, por la construcción de la solución en sí. Se necesita un acceso de varios usuarios y lo ideal es que se pueda realizar desde cualquier parte: en la misma clase, en casa de los alumnos / profesor.
    
    
    
 * [x] ***¿La solución requiere una cierta cantidad de lógica de negocio, en vez solucionarse sólo almacenando y buscando?***
-    
-    Sí. *En primer lugar, como prerrequisito se requiere el acceso a las fichas de los jugadores y sus atributos, datos que debe proporcional la sección deportiva del club (léase sección de "modelo"), así como que el cuerpo técnico proporcione una lista con todos los ejercicios de entrenamiento que considere. ¿Esto último de los ejercicios también es necesario? Sí, es necesario a pesar de que se pueda pensar que son muchas inserciones, pero la aplicación debe ser flexible atendiendo a las ideas de dicho cuepo técnico (ejemplo: estaríamos muy limitados si los ejercicios son por defecto impuesto por nosotros / acceso a API, y de repente se produce un cambio de entrenador y ve que no le convencen los ejercicios de nuestra aplicación).*
-    
-    Con los datos anteriores se realizarán diversos cálculos como medias, desviaciones, varianzas, comparaciones estadísticas en general, con el objetivo de decidir los ejercicios finales de la sesión. También hay que tener en cuenta que hay que establecer algoritmos de decisión sobre la planificación: valorar que jugadores lesionados no pueden participar en las rutinas, o que un mismo jugador no debería participar en subgrupos con una dificultad/carga de ejercicio excesiva, y por supuesto, *debería haber un equilibrio en el orden de cómo estos se realizan*.
-    
-    Esta es la lógica de negocio que hay detrás. De lo único que se tiene que encargar el entrenador es de recibir la decisión de la aplicación, y posteriormente otorgar calificación a los jugadores para comprobar su evolución.
+  
+    Sí. Se requiere de un algoritmo de similitud de textos para la comparación de la respuesta otorgada por el alumno, con la propuesta del profesor. En mi caso he optado por la *similitud del coseno*. Tratando los textos a modo de vector, se calcularía la proximidad de estos vectores con el ángulo que forman, lo que permitiría estimar cómo de cerca ha estado el alumno de la respuesta del profesor. Después, sería necesario transformar el resultado del ángulo en una calificación de 0 a 10 (un formato más entendible por los humanos). Finalmente, el profesor puede estar interesado en el rendimiento general de la clase, y para ello se realizarán cálculos estadísticos que no requieren de demasiado esfuerzo.
     
     
-
+    
 * [x] ***¿Se ha incluído la configuración del repositorio y se ha enlazado desde el `README`?***
 
     Sí, para ello acuda al apartado de este readme: *Secciones de Interés*.
 
+    
 
+* [ ]  ***¿Tienes todos los datos necesarios para poder resolver el problema, o vas a requerir que el usuario los introduzca?***
+
+    Se requiere por parte del profesor, que introduzca una plantilla de preguntas y respuestas propuestas. Y por parte del alumno, se requiere que realice el examen propuesto.
 
 ****
 

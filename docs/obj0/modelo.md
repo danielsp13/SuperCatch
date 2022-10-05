@@ -14,25 +14,29 @@
 
 Usando la metodología de "personas":
 
-> Juan Campos, 53 años, entrenador del equipo de fútbol de tercera división española, Monachil CF. Esta es su segunda temporada al cargo. En la anterior, no le fue muy bien y el equipo no pudo pelear por el ascenso a la siguiente categoría. En esta nueva campaña, necesita una solución para planificar mejor la temporada y evitar que los jugadores lleguen cansados al final, o que se pierdan partidos que no se deberían perder.
+> Dolores Cabrera, 52 años, profesora de Historia en un instituto de la ESO. Tras varios años impartiendo clase en el instituto ha comprobado que, a medida que pasa el tiempo, sus alumnos no estudian adecuadamente los contenidos de su asignatura. Para ello, considera de utilidad realizar controles / exámenes de prueba, pero el tiempo que se invierte en diseñarlos, y posteriormente corregirlos y obtener conclusiones generales es una tarea en la que se pierde mucho tiempo. Le gustaría una solución que le permitiera automatizar esta tarea, y recibir una estimación acerca de la situación de la clase en conjunto.
 
-Juan es nuestro potencial usuario de la aplicación, en combinación con su equipo técnico. Pero, ¿son ellos realmente quienes nos comprarán el producto? No, quien estaría realmente interesado en nuestro producto, y quien de verdad sería ***nuestro cliente***, es ***la entidad deportiva (equipo de fútbol en cuestión)***. 
+
+
+***Nuestro cliente serán profesores como Lola, que esperan una solución informatizada que permita atender a otras necesidades de mayor interés, liberandole de la tarea de corrección de los exámenes.***
+
+Los usuarios de la plataforma son: *el profesor*, y *los alumnos*.
 
 ****
 
 #### Fase 2: ¿Qué datos se necesitan para la solución? ¿Quiénes los proporcionan? 
 
-Para la aplicación se requieren un conjunto de datos considerable, que son:
+Para la aplicación se requieren los siguientes datos:
 
-* *Ficha técnica de los jugadores*: Proporcionado por la sección deportiva del club. Contiene todos los atributos técnicos del jugador típicos, a destacar: *posición que juega, posición alternativa, edad, etc.*.
-* *Atributos de los jugadores:* Proporcionado por la sección deportiva del club. Cuando se ficha a un jugador, este pasa un reconocimiento médico para ver sus cualidades. Estos datos son clave para el seguimiento del jugador y concretamente podemos tener los atributos de *velocidad, pase, tiro, potencia física, defensa* además de otras cosas adicionales como *tendencia a lesión,...*.
-
-* *Ejercicios de entrenamiento:* Proporcionado por el cuerpo técnico. Cada ejercicio de entrenamiento debe especificar el *tipo de entrenamiento (individual,grupo), cualidad que se trabaja, grado de dificultad, tiempo de duración...*. Estos ejercicios propuestos por el cuerpo técnico serán la base para la posterior toma de decisiones de la aplicación.
-* *Calificaciones y resultados:* Proporcionado por el entrenador. El entrenador una vez tiene la planificación del entrenamiento del día **(recibida por nuestra aplicación)**, otorga una calificación a cada jugador, lo que se verá reflejado en el sistema como una actualización de los atributos del jugador.
+* *Plantilla de preguntas y resultados del profesor: Proporcionado por el profesor. Esta será la base para la comparación con las respuestas otorgadas por los alumnos* 
+* *Resolución del examen: Proporcionado por los alumnos.* 
 
 ****
 
 #### Fase 3: ¿Qué lógica de negocio hay detrás de la aplicación?
 
-Se requerirá un manejo de cálculo importante estadístico como pueden ser medias / desviaciones típicas, varianzas... También se requerirá desarrollo de algoritmos para la asignación y planificación de los entrenamientos (ejemplo: no es conveniente que si se hacen subgrupos de trabajo, un mismo jugador haga ejercicios con demasiada dificultad; o también, el orden en el que estos entrenamientos se planifican hay que tenerlo en cuenta, ya que los jugadores no pueden terminar el día estando demasiado cansados, etc...) . Finalmente, también se puede requerir visualización de gráficos o informes para que el entrenador pueda recibir toda esta información de una manera cómoda.
+Se requiere la utilización de algoritmos de similitud de textos, concretamente, optaré por el *algoritmo de similitud del coseno*. La idea consiste en tratar el texto de la respuesta (tanto del profesor como del alumno) como un vector normalizado, y comprobar cómo de cerca se encuentran, teniendo en cuenta el ángulo que formarían dichos vectores. *Ejemplo: un ángulo pequeño, implicaría una respuesta más acertada de acuerdo a lo escrito por el profesor.*
 
+Una vez se haya realizado esto, será necesario establecer una calificación en un formato más humano. No presenta demasiado problema, pues sólo sería necesario llevar el resultado de similitud (intervalo [0, $\pi$/2]) al intervalo [0,10].
+
+Lo anterior, sería la verdadera lógica de negocio que hay detrás. Sin embargo, de manera adicional sería interesante obtener conclusiones acerca del rendimiento general de todos los alumnos, haciendo cálculos estadísticos sencillos con las calificaciones. 
