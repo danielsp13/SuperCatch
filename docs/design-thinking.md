@@ -40,7 +40,7 @@ En esta primera fase, tras haber pensado en muchos problemas que pueden ser de i
 
 #### Fase 2: Definir
 
-***¿Cuál es el problema exactamente?: ***
+***¿Cuál es el problema exactamente?: La optimización de la tarea de corrección de exámenes que requieren un desarrollo/resolución en lenguaje natural.***
 
 ***¿Quién es el interesado?: Un profesor de instituto/bachillerato***
 

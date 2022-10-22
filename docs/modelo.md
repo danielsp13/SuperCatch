@@ -40,3 +40,37 @@ Se requiere la utilización de algoritmos de similitud de textos, concretamente,
 Una vez se haya realizado esto, será necesario establecer una calificación en un formato más humano. No presenta demasiado problema, pues sólo sería necesario llevar el resultado de similitud (intervalo [0, $\pi$/2]) al intervalo [0,10].
 
 Lo anterior, sería la verdadera lógica de negocio que hay detrás. Sin embargo, de manera adicional sería interesante obtener conclusiones acerca del rendimiento general de todos los alumnos, haciendo cálculos estadísticos sencillos con las calificaciones. 
+
+
+
+****
+
+****
+
+
+
+#### Comprobación de items de proyecto
+
+En esta última sección, se verifica que el modelo de solución planteada al problema analizado en el apartado de ***[Desing Thinking](design-thinking.md)*** es correcta y resuelve al menos las cuestiones esenciales:
+
+* [x] ***¿Se trata de un problema real del que se tenga conocimiento personal?***
+
+  Sí. Obviamente, yo no soy profesor de ninguna asignatura (al menos por ahora), pero durante la etapa de la ESO siempre he sido muy cercano con los profesores, y he percibido en primera persona la cantidad de tiempo que tardan en corregir ciertos exámenes en los que se necesita concentración y una cierta interpretación debido a la complejidad de la respuesta que se pide (por ejemplo en Historia). Además, dichos profesores me han comentado en varias ocasiones esta situación.
+
+  
+
+* [x] ***¿Se trata de un problema que para solucionar requiera el despliegue de una aplicación en la nube?***
+
+  Por supusto. Es el lugar idóneo para el mismo, por la construcción de la solución en sí. Se necesita un acceso de varios usuarios y lo ideal es que se pueda realizar desde cualquier parte: en la misma clase, en casa de los alumnos / profesor.
+
+
+
+* [x] ***¿La solución requiere una cierta cantidad de lógica de negocio, en vez solucionarse sólo almacenando y buscando?***
+
+  Sí. Explicado en la **Fase 3**.
+
+
+
+* [x] ***¿Tienes todos los datos necesarios para poder resolver el problema, o vas a requerir que el usuario los introduzca?***
+
+  Por parte del alumno, se requiere que realice el examen propuesto por el profesor.
