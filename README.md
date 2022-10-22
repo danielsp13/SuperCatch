@@ -27,19 +27,14 @@ Se propone una solución en forma de plataforma residente en la nube con el obje
 
 Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes secciones:
 
-***OBJETIVO 0:***
-
 * :thinking: [Design Thinking](docs/obj0/design-thinking.md) : Especifica el proceso de design-thinking que he seguido para modelar el problema y encontrar la solución.
-* :spiral_notepad: [Modelo](docs/obj0/modelo.md) : Conceptualización más extendida del modelo de solución.
-* :heavy_check_mark: [Lista de comprobación inicial](docs/obj0/init-checklist.md) : Se realiza una comprobación verificando todos los requisitos para el inicio de este proyecto.
+* :spiral_notepad: [Modelo](docs/obj0/modelo.md) : Conceptualización extendida del modelo de solución.
 
 
 
-***OBJETIVO 1:***
-
-* :busts_in_silhouette: [Usuarios](docs/obj1/users.md) : Se especifican los tipos de usuarios que utilizarán nuestra solución.
-* :notebook: [Historias de Usuario](docs/obj1/user-stories.md) : Se especifican las historias de usuario, útiles para especificar adecuadamente las fases del proyecto y el desarrollo de la solución.
-* :checkered_flag: [Milestones](docs/obj1/milestones.md) : Se especifican los hitos a conseguir durante el desarrollo del proyecto.
+* :busts_in_silhouette: [Usuarios](docs/users.md) : Se especifican los tipos de usuarios que utilizarán nuestra solución.
+* :notebook: [Historias de Usuario](docs/user-stories.md) : Se especifican las historias de usuario, útiles para especificar adecuadamente las fases del proyecto y el desarrollo de la solución.
+* :checkered_flag: [Milestones](docs/milestones.md) : Se especifican los hitos a conseguir durante el desarrollo del proyecto.
 
 ****
 
@@ -47,5 +42,5 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 
 Para más información adicional referente al repositorio, puede consultar los siguientes enlaces:
 
-* [Configuración del repositorio GIT](repo-res/objetivo0-gitconfig.md)
-* [Estructura del repositorio GIT](repo-res/objetivo0-gitstructure.md)
+* [Configuración del repositorio GIT](repo-res/gitconfig.md)
+* [Estructura del repositorio GIT](repo-res/gitstructure.md)
