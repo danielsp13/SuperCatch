@@ -27,8 +27,8 @@ Se propone una solución en forma de plataforma residente en la nube con el obje
 
 Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes secciones:
 
-* :thinking: [Design Thinking](docs/obj0/design-thinking.md) : Especifica el proceso de design-thinking que he seguido para modelar el problema y encontrar la solución.
-* :spiral_notepad: [Modelo](docs/obj0/modelo.md) : Conceptualización extendida del modelo de solución.
+* :thinking: [Design Thinking](docs/design-thinking.md) : Especifica el proceso de design-thinking que he seguido para modelar el problema y encontrar la solución.
+* :spiral_notepad: [Modelo](docs/modelo.md) : Conceptualización extendida del modelo de solución.
 
 
 
