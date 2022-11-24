@@ -20,7 +20,7 @@ class Alumno:
     def get_apellidos(self):
         return self.apellidos
 
-    def aniadir_nota(self, nota):
+    def aniadir_nota(self, nota:int):
         self.calificaciones.append(nota)
     
     
