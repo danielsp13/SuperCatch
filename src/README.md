@@ -4,6 +4,6 @@ Clase Pregunta: En este objeto valor inmutable hemos definido la respuesta corre
 
 Clase Respuesta: Al igual que anteriormente, hemos definido una clase inmutable donde se albergará la respuesta realizada por parte del alumno identificada mediante el número de pregunta con el que aparezca en el examen.
 
-Clase ResolucionExamen:
+Clase ResolucionExamen: Esta entidad estará destinada a relacionar las preguntas (respuestas correctas) y respuestas por parte de la totalidad de los alumnos con el examen (identificado por un id) que incluya dichas preguntas y respuestas. Aquí se podrá realizar el posterior algoritmo de comparación para valorar la calidad de las respuestas añadiendo métodos básicos como añadir preguntas y respuestas a la lista de las mismas.
 
-Clase Alumno:
+Clase Alumno: Esta entidad estará destinada a recoger los datos personales del alumno, además de las calificaciones que vaya obteniendo en los exámenes del curso.
