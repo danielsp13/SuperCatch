@@ -1,2 +1,4 @@
 lenguaje: Python3
-entidad: [SuperCatch/src/pregunta.py, SuperCatch/src/respuesta.py]
+
+entidad:
+  - src/resolucionExamen.py
