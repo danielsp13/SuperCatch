@@ -1,8 +1,9 @@
 from dataclasses import dataclass
 
-@dataclass
+@dataclass(frozen=True)
 class Pregunta:
 
+    '''Clase que representa la respuesta correcta a una pregunta'''
     numero: int
     respuesta: str
     palabras_clave: list
@@ -16,18 +17,9 @@ class Pregunta:
         self.numero = num
         self.respuesta = res
         self.palabras_clave = []
-    
-    def get_numero(self):
-        return self.numero
-
-    def get_respuesta(self):
-        return self.respuesta
 
     def get_palabra_clave(self, posicion: int):
         return self.palabras_clave[posicion]
-    
-    def get_posicion_palabra(self, palabra: str):
-        return self.palabras_clave.index(palabra)
 
     def aniadir_palabra_clave(self, palabra: str):
         self.palabras_clave.append(palabra)
