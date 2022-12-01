@@ -1,4 +1,4 @@
-lenguaje: Python3
+lenguaje: python
 
 entidad:
   - src/resolucionExamen.py
