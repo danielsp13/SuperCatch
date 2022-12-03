@@ -10,10 +10,10 @@ class Alumno:
     curso: int
 
     def __init__(self, id: int):
-        self.dni = id
-        self.nombre = ''
-        self.apellidos = ''
-        self.curso = 0
+        object.__setattr__(self, "dni", id)
+        object.__setattr__(self, "nombre", '')
+        object.__setattr__(self, "apellidos", '')
+        object.__setattr__(self, "curso", 0)
     
     
     
