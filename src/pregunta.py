@@ -17,9 +17,3 @@ class Pregunta:
         object.__setattr__(self, "numero", num)
         object.__setattr__(self, "respuesta", res)
         object.__setattr__(self, "palabras_clave", [])
-
-    def get_palabra_clave(self, posicion: int):
-        return self.palabras_clave[posicion]
-
-    def aniadir_palabra_clave(self, palabra: str):
-        self.palabras_clave.append(palabra)
