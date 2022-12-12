@@ -1,5 +1,4 @@
 lenguaje: python
-
 entidad:
   - src/respuesta.py
   - src/resolucionExamen.py
