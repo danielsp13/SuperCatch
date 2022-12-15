@@ -6,8 +6,5 @@ Se define un **objeto valor** que define la respuesta correcta asociada a una pr
 ### RESPUESTA:
 Se define como una **entidad** que define la respuesta propuesta por el alumno a una pregunta del examen. Teniendo en cuenta que se ha de facilitar la corrección, se propone la definición de varios campos necesarios como: *número* de la pregunta respondida enlazando esta con la pregunta correspondiente, *texto* escrito por el alumno, *calificacion* que se obtiene de esa respuesta y *alumno* que responde esa pregunta.
 
-### ALUMNO:
-Se define otro **objeto valor** que corresponde al alumno que realiza el examen. Con el fin de modelar este alumno únicamente hemos definido campos personales del mismo como: *dni* para identificarlo, *nombre* y *apellidos*, y *curso* en el que se encuentra.
-
 ### RESOLUCIONEXAMEN:
 Se define otra **entidad** que va a dar formato a la unión de preguntas y respuestas del alumnado a un examen en concreto. Según la [HU03](https://github.com/danielsp13/SuperCatch/blob/main/docs/user-stories.md#black_nib-hu03-irene-necesita-entrenar-para-sus-ex%C3%A1menes), hemos de tener en cuenta que se puede practicar en casa por lo que definiremos dos tipos de examen quedando así la estructura de la entidad: *tipo* de examen (prueba o real), lista de *preguntas* que se proponen a resolver y lista de *respuestas* de la totalidad de los alumnos permitiendo agrupar ambas facilitando el acceso.
