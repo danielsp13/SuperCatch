@@ -1,0 +1,6 @@
+lenguaje: python
+entidad:
+  
+automatizar:
+  fichero: pyproject.toml
+  orden: poe
