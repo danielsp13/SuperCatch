@@ -10,7 +10,7 @@ python = "^3.7"
 
 [tool.poe.tasks]
 install = "poetry install"
-check = "python -m compileall supercatch"
+check = "python -m compileall src"
 
 [build-system]
 requires = ["poetry-core"]
