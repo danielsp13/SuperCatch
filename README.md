@@ -42,6 +42,14 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 
 ### :shell: Órdenes de instalación y verificación
 
+Para instalar el gestor de dependencias y de tareas, en un ámbito global al usuario:
+
+~~~bash
+$ pip install -r requirements.txt
+~~~
+
+
+
 Para instalar las dependencias del proyecto:
 
 ~~~bash
