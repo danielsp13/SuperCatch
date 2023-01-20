@@ -35,6 +35,38 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 * :busts_in_silhouette: [Usuarios](docs/users.md) : Se especifican los tipos de usuarios que utilizarán nuestra solución.
 * :notebook: [Historias de Usuario](docs/user-stories.md) : Se especifican las historias de usuario, útiles para especificar adecuadamente las fases del proyecto y el desarrollo de la solución.
 * :checkered_flag: [Milestones](docs/milestones.md) : Se especifican los hitos a conseguir durante el desarrollo del proyecto.
+* :gear: [Gestor dependencias](docs/gestor-dependencias.md) : Se especifican los criterios establecidos para la elección del gestor de tareas. **poetry**.
+* :runner: [Gestor tareas](docs/gestor-tareas.md) : Se especifican los criterios establecidos para la elección del gestor de tareas. **poethepoet**.
+
+****
+
+### :shell: Órdenes de instalación y verificación
+
+Para instalar el gestor de dependencias y de tareas, en un ámbito global al usuario:
+
+~~~bash
+$ pip install -r requirements.txt
+~~~
+
+
+
+Para instalar las dependencias del proyecto:
+
+~~~bash
+$ poe install
+~~~
+
+*Se creará un entorno virtual para la instalación de las dependencias utilizadas de forma aislada.*
+
+
+
+Para comprobar la sintaxis de las fuentes:
+
+~~~bash
+$ poe check
+~~~
+
+
 
 ****
 

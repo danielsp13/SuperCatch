@@ -1,0 +1,2 @@
+poetry >= 1.3          # Última versión del gestor de dependencias estable
+poethepoet >= 0.16.5   # Última versión del gestor de tareas estable

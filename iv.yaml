@@ -1,0 +1,7 @@
+lenguaje: python
+entidad:
+  - src/respuesta.py
+  - src/resolucionExamen.py
+automatizar:
+  fichero: pyproject.toml
+  orden: poe
