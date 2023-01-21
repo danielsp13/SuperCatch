@@ -21,13 +21,19 @@ Se deben definir clases que modelen adecuadamente a las entidades de: usuarios, 
 
 ****
 
-### :checkered_flag: [M1] Implementación de algoritmo de corrección automática de exámenes (Lógica de negocio)
+### :checkered_flag: [M1] Implementación de algoritmos y estructuras de Procesamiento del Lenguaje Natural (Lógica de Negocio)
+
+Se debe definir un módulo en el que se implementen algoritmos que permitan procesar los textos de las respuestas, obteniendo estructuras que puedan ser utilizadas para la posterior implementación del algoritmo de corrección.
+
+****
+
+### :checkered_flag: [M2] Implementación de algoritmo de corrección automática de exámenes (Lógica de negocio)
 
 Se debe definir un módulo en el que se implemente el algoritmo de comparación entre la respuesta correcta y la otorgada por el alumno. Se utilizará para la corrección del examen planteado y se otorgará una calificación a cada pregunta del mismo.
 
 ****
 
-### :checkered_flag: [M2] Habilitar análisis de resultados e informes (Lógica de negocio)
+### :checkered_flag: [M3] Habilitar análisis de resultados e informes (Lógica de negocio)
 
 Se debe recolectar debidamente toda la información asociada a los exámenes planteados por el profesor y generar informe general con el resultado colectivo. Información a considerar: calificaciones, preguntas mejor contestadas, preguntas peor contestadas. 
 
