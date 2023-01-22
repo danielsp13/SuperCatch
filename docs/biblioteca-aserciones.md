@@ -50,6 +50,7 @@ A3. **[Hypothesis](https://hypothesis.readthedocs.io/en/latest/)** :
 * (2) Información acerca de la herramienta:
   * Permite la creación de tests unitarios de forma más simple que otras bibliotecas.
   * Además, permite escribir tests bajo el paradigma de testeo basado en propiedades.
+  * Trabaja con datos/estructuras generados mediante estrategias.
   * La ejecución de los tests escritos se pueden realizar explícitamente por nosotros mismos, pero funciona muy bien con tests runners (como el elegido, `pytest`). [Hypothesis : Running tests](https://hypothesis.readthedocs.io/en/latest/quickstart.html#running-tests)
 * (op1) Popularidad de la herramienta: :heavy_check_mark: 
   * Está muy bien valorada entre los usuarios. También, se considera una herramienta influyente en gran cantidad de proyectos.
@@ -67,4 +68,4 @@ Considero que las herramientas que pueden ser útiles para el proyecto son `PyHa
 
 
 
-**Hypothesis**  sera la biblioteca de aserciones utilizada por los motivos mencionados.
+**PyHamcrest**  es la biblioteca de aserciones elegida. En un principio, se había decidido trabajar con *Hypothesis*, ya que tiene actualizaciones más recientes y trabaja bien con el test runner pytest. El motivo del cambio de elección reside en que en la práctica se está haciendo un uso nulo de la biblioteca, ya que uno de sus puntos más fuertes, la generación de datos para las pruebas, no se puede usar para el proyecto, pues en este caso se necesita definir textos en español, y esta cuestión no es capaz de hacerla. Además, tampoco dispone de funcionalidades de testeo de excepciones.
