@@ -1,6 +1,5 @@
 from supercatch.respuesta import Respuesta
 
-import re
 from string import punctuation
 from nltk.tokenize import word_tokenize
 
