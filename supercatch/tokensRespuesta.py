@@ -1,5 +1,7 @@
 from supercatch.respuesta import Respuesta
 
+from nltk.tokenize import word_tokenize
+
 class TokensRespuesta:
 	Respuesta: Respuesta
 	Tokens: list
@@ -8,21 +10,18 @@ class TokensRespuesta:
 		self.Respuesta = resp
 		self.Tokens = []
 		
+		
 	def getRespuesta(self):
 		return self.Respuesta
 		
 	def getTokens(self):
 		return self.Tokens
-
-	def tokenizarTexto(self):
-		CHARACTER_SPLIT = ' '
-		NULL_TOKEN = ""
 		
-		textoSplit = self.Respuesta.texto.split(CHARACTER_SPLIT)
-		tokens = list(filter(lambda t: t != NULL_TOKEN, textoSplit))
+	def tokenizarTexto(self):
+		tokens = word_tokenize(self.Respuesta.texto.replace('¿','').replace('¡',''))
 		
 		if len(tokens) > 0:
 			self.Tokens = tokens
 			
 		else:
-			raise Exception("El texto introducido, no tiene contenido válido")
+			raise Exception("No hay contenido en la respuesta proporcionada.")
