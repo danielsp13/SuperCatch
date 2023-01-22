@@ -13,11 +13,12 @@ nltk = "^3.8.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.2.0"
-hypothesis = "^6.62.1"
+pyhamcrest = "^2.0.4"
 
 [tool.poe.tasks]
 install = "poetry install"
 check = "python -m compileall src"
+test = "poetry run pytest -v tests/test_pnl.py"
 
 [build-system]
 requires = ["poetry-core"]
