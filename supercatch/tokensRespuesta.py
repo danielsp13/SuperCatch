@@ -2,6 +2,7 @@ from supercatch.respuesta import Respuesta
 
 from string import punctuation
 from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
 
 class TokensRespuesta:
 	Respuesta: Respuesta
@@ -45,3 +46,15 @@ class TokensRespuesta:
 	
 	def tokensMinusculas(self):
 		self.Tokens = [tk.lower() for tk in self.Tokens]
+		
+	def eliminarStopwords(self):
+		stopWords = set(stopwords.words('spanish'))
+
+		tokens = [tk for tk in self.Tokens if tk not in stopWords]
+		
+		if len(tokens) > 0:
+			self.Tokens = tokens
+			
+		else:
+			raise Exception("El texto sólo contiene palabras vacías.")
+		
