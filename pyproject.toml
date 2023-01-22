@@ -16,9 +16,10 @@ pytest = "^7.2.0"
 pyhamcrest = "^2.0.4"
 
 [tool.poe.tasks]
-install = "poetry install"
+install = "poetry install" 
 check = "python -m compileall src"
 test = "poetry run pytest -v tests/test_pnl.py"
+nltk_tokenizer_data = "python -c 'import nltk; nltk.download(\"punkt\")'"
 
 [build-system]
 requires = ["poetry-core"]
