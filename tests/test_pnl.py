@@ -4,6 +4,8 @@ import re
 from supercatch.respuesta import Respuesta
 from supercatch.tokensRespuesta import TokensRespuesta
 
+from nltk.corpus import stopwords
+
 #=====================================================================
 
 NULL_TOKEN = '' 
@@ -25,6 +27,7 @@ listaRespExc.append(Respuesta(""))
 listaRespExc.append(Respuesta("        "))
 listaRespExc.append(Respuesta("?!;.-·¡.;!/,¿"))
 listaRespExc.append(Respuesta(" ¿?! !' ?  ! ; . - ·¡ .;! /,¿"))
+listaRespExc.append(Respuesta("el, los las unas de para   sobre durante en."))
 
 listaTknResp = []
 
@@ -73,3 +76,16 @@ def test_list_tokens_without_capital_letters():
 		tkr.tokensMinusculas()
 		
 		assert_that([tk for tk in tkr.getTokens() if re.search("[A-Z]+",tk)], has_length(0))
+		
+def test_list_tokens_without_stopwords():
+	stopWords = set(stopwords.words('spanish'))	
+	
+	for tkr in listaTknResp:
+		tkr.eliminarStopwords()
+		
+		assert_that([tk for tk in tkr.getTokens() if tk in stopWords], has_length(0))
+		
+def test_exception_tokens_without_stopwords():
+	tkr = listaTknRespExc[4]
+	assert_that(calling(tkr.eliminarStopwords), raises(Exception))
+	
