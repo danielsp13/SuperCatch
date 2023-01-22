@@ -1,5 +1,6 @@
 from hamcrest import *
 
+import re
 from supercatch.respuesta import Respuesta
 from supercatch.tokensRespuesta import TokensRespuesta
 
@@ -14,6 +15,8 @@ listaResp.append(Respuesta("Esta es una respusta de ejemplo."))
 listaResp.append(Respuesta("   Esta   es   otra   respuesta    . "))
 listaResp.append(Respuesta("¿Qué se supone    que debo responder aquí?"))
 listaResp.append(Respuesta("   - 'A quién madruga,   Dios   le ayuda' -, dijo alguien alguna vez."))
+listaResp.append(Respuesta("eStA eS   uNA   RESPuesTA MuY DIFÍCIL de leeR. ¿Sí?"))
+listaResp.append(Respuesta("dEntRO de un AÑO, será 2024."))
 
 # Respuestas para pruebas (excepciones)
 listaRespExc = []
@@ -57,12 +60,16 @@ def test_exception_list_tokens_not_empty():
 		
 def test_list_tokens_without_punctuation():
 	for tkr in listaTknResp:
-		tkr.tokenizarTexto(); tkr.eliminarSimbolos()
+		tkr.eliminarSimbolos()
 		
 		assert_that(tkr.getTokens(), is_not(has_length(0)))
 		
 def test_exception_list_tokens_without_punctuation():
 	for i in range(2,4):
-		listaTknRespExc[i].tokenizarTexto()
 		assert_that(calling(listaTknRespExc[i].eliminarSimbolos), raises(Exception))
 
+def test_list_tokens_without_capital_letters():
+	for tkr in listaTknResp:
+		tkr.tokensMinusculas()
+		
+		assert_that([tk for tk in tkr.getTokens() if re.search("[A-Z]+",tk)], has_length(0))
