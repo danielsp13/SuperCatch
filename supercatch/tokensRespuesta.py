@@ -1,5 +1,6 @@
 from supercatch.respuesta import Respuesta
 
+import re
 from string import punctuation
 from nltk.tokenize import word_tokenize
 
@@ -43,3 +44,5 @@ class TokensRespuesta:
 			raise Exception("El texto no contiene palabras.")
 
 	
+	def tokensMinusculas(self):
+		self.Tokens = [tk.lower() for tk in self.Tokens]
