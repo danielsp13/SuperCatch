@@ -1,4 +1,8 @@
 lenguaje: python
+entidad:
+  - supercatch/tokensRespuesta.py
 automatizar:
   fichero: pyproject.toml
   orden: poe
+test:
+  - tests/test_pnl.py
