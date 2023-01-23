@@ -5,6 +5,7 @@ from supercatch.respuesta import Respuesta
 from supercatch.tokensRespuesta import TokensRespuesta
 
 from nltk.corpus import stopwords
+from nltk.stem import SnowballStemmer
 
 #=====================================================================
 
@@ -88,4 +89,14 @@ def test_list_tokens_without_stopwords():
 def test_exception_tokens_without_stopwords():
 	tkr = listaTknRespExc[4]
 	assert_that(calling(tkr.eliminarStopwords), raises(Exception))
+	
+def test_stemming_tokens():
+	for tkr in listaTknResp:
+		stemmer = SnowballStemmer('spanish')
+		
+		tkr.segmentarTokens()
+		tokensCopy = tkr.getTokens()
+		tkr.segmentarTokens()
+		
+		assert_that(tkr.getTokens(), equal_to(tokensCopy))
 	
