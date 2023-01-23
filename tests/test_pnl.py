@@ -8,7 +8,7 @@ from nltk.corpus import stopwords
 
 #=====================================================================
 
-NULL_TOKEN = '' 
+
 
 # Respuestas para pruebas
 listaResp = []
@@ -41,14 +41,18 @@ for resp in listaRespExc:
 
 #=====================================================================
 
+#Este bloque de tests verifican el funcionamiento del análisis léxico.
+# Prueban que la lista de tokens es una lista no vacía, que no contiene
+# tokens vacíos, ni tampoco sin caracteres; y si contienen letras,
+# estas solo sean minusculas
 
 def test_get_tokens_is_a_list():    
 	for tkr in listaTknResp:
 	    assert_that(tkr.getTokens(), instance_of(list))
 
 def test_list_tokens_not_have_null_tokens():
+	NULL_TOKEN = ''
 	for tkr in listaTknResp:
-	
 		assert_that(tkr.getTokens().count(NULL_TOKEN),equal_to(0))
 
 def test_list_tokens_not_empty():
@@ -77,6 +81,12 @@ def test_list_tokens_without_capital_letters():
 		
 		assert_that([tk for tk in tkr.getTokens() if re.search("[A-Z]+",tk)], has_length(0))
 		
+#=====================================================================
+
+# Este bloque de tests verifican el funcionamiento de la eliminacion
+# de palabras vacias. Prueba que la lista de tokens no sea vacia,
+# ni tampoco contenga ninguna stopword
+
 def test_list_tokens_without_stopwords():
 	stopWords = set(stopwords.words('spanish'))	
 	
@@ -88,7 +98,12 @@ def test_list_tokens_without_stopwords():
 def test_exception_tokens_without_stopwords():
 	tkr = listaTknRespExc[4]
 	assert_that(calling(tkr.eliminarStopwords), raises(Exception))
+
+#=====================================================================
 	
+# Este test verifica el funcionamiento de la segmentacion. Prueba
+# que la lista de tokens es irreducible
+
 def test_stemming_tokens():
 	for tkr in listaTknResp:
 		
