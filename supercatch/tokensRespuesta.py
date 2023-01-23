@@ -4,6 +4,7 @@ from string import punctuation
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
+from unidecode import unidecode
 
 class TokensRespuesta:
 	Respuesta: Respuesta
@@ -26,7 +27,9 @@ class TokensRespuesta:
 		for symbol in unhandled_symbols:
 			textoFormateado = textoFormateado.replace(symbol,'')
 		
-		tokens = word_tokenize(textoFormateado)
+		textoNormalizado = unidecode(textoFormateado)
+		
+		tokens = word_tokenize(textoNormalizado)
 		
 		if len(tokens) > 0:
 			self.Tokens = tokens
