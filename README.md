@@ -37,6 +37,7 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 * :checkered_flag: [Milestones](docs/milestones.md) : Se especifican los hitos a conseguir durante el desarrollo del proyecto.
 * :gear: [Gestor dependencias](docs/gestor-dependencias.md) : Se especifican los criterios establecidos para la elección del gestor de tareas. **poetry**.
 * :runner: [Gestor tareas](docs/gestor-tareas.md) : Se especifican los criterios establecidos para la elección del gestor de tareas. **poethepoet**.
+* :rabbit2: [Test Runner](docs/test-runner.md) : Se especifican los criterios establecidos para la elección del test runner. **pytest**
 
 ****
 
