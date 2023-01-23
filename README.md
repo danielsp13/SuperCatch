@@ -50,6 +50,8 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 
 * :books: [Dependencias](docs/dependencias.md) : Se especifican las bibliotecas externas utilizadas en el desarrollo del proyecto.
 
+* :bulb: [Lógica de Negocio](docs/logica-negocio.md) : Se especifica la implementación realizada en las diferentes fases del proyecto consideradas en los milestones.
+
 ****
 
 ### :shell: Órdenes de instalación y verificación
