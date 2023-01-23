@@ -3,6 +3,7 @@ from supercatch.respuesta import Respuesta
 from string import punctuation
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from nltk.stem import SnowballStemmer
 
 class TokensRespuesta:
 	Respuesta: Respuesta
@@ -21,11 +22,11 @@ class TokensRespuesta:
 		
 	def tokenizarTexto(self):
 		unhandled_symbols = ['.','¡','¿']
-		tokensFormateados = self.Respuesta.texto.replace('·','')
+		textoFormateado = self.Respuesta.texto.replace('·','')
 		for symbol in unhandled_symbols:
-			tokensFormateados = tokensFormateados.replace(symbol,'')
+			textoFormateado = textoFormateado.replace(symbol,'')
 		
-		tokens = word_tokenize(tokensFormateados)
+		tokens = word_tokenize(textoFormateado)
 		
 		if len(tokens) > 0:
 			self.Tokens = tokens
@@ -57,4 +58,9 @@ class TokensRespuesta:
 			
 		else:
 			raise Exception("El texto sólo contiene palabras vacías.")
+			
+	def segmentarTokens(self):
+		stemmer = SnowballStemmer('spanish')
+		
+		self.Tokens = [stemmer.stem(tk) for tk in self.Tokens]
 		
