@@ -60,6 +60,14 @@ $ poe install
 
 *Se creará un entorno virtual para la instalación de las dependencias utilizadas de forma aislada.*
 
+Una vez se ha realizado la anterior orden, será necesario instalar los datos de una de las bibliotecas de las que depende el proyecto, `NLTK`, de la que se habla en [dependencias](docs/dependencias.md) Para ello, hay que usar la orden:
+
+~~~bash
+$ poe nltk_data
+~~~
+
+Esta orden descarga en el directorio HOME del usuario los datos necesarios para algunas de las fases de la lógica de negocio (concretamente, la tokenización y eliminación de stopwords).
+
 
 
 Para comprobar la sintaxis de las fuentes:
