@@ -78,6 +78,16 @@ $ poe check
 
 
 
+Para lanzar los tests que prueben el código implementado:
+
+~~~bash
+$ poe test
+~~~
+
+
+
+
+
 ****
 
 ###  Secciones de interés
