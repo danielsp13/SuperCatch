@@ -38,6 +38,7 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 * :gear: [Gestor dependencias](docs/gestor-dependencias.md) : Se especifican los criterios establecidos para la elección del gestor de tareas. **poetry**.
 * :runner: [Gestor tareas](docs/gestor-tareas.md) : Se especifican los criterios establecidos para la elección del gestor de tareas. **poethepoet**.
 * :rabbit2: [Test Runner](docs/test-runner.md) : Se especifican los criterios establecidos para la elección del test runner. **pytest**
+* :heavy_check_mark: [Biblioteca de Aserciones](docs/biblioteca-aserciones.md) : Se especifican los criterios establecidos para la elección de biblioteca de aserciones. **PyHamcrest**
 
 ****
 
