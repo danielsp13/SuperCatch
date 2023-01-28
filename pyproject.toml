@@ -20,7 +20,7 @@ pyhamcrest = "^2.0.4"
 install = "poetry install" 
 check = "python -m compileall supercatch"
 test = "poetry run pytest -v tests/test_pnl.py"
-nltk_data = "python -c 'import nltk; nltk.download(\"punkt\"); nltk.download(\"stopwords\")'"
+nltk_data = "python -c 'import nltk; nltk.download(\"stopwords\")'"
 
 [build-system]
 requires = ["poetry-core"]
