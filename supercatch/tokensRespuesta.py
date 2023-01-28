@@ -1,9 +1,7 @@
 from supercatch.respuesta import Respuesta
 
-from string import punctuation
-from nltk.tokenize import word_tokenize
+import re
 from nltk.corpus import stopwords
-from unidecode import unidecode
 
 class TokensRespuesta:
 	Tokens: list
@@ -13,48 +11,44 @@ class TokensRespuesta:
 		
 	def getTokens(self):
 		return self.Tokens
-
-	def tokenizarTexto(self):
+		
+	def procesar(self):
+		self.__eliminarSimbolos()
+		self.__eliminarTokensNulos()
+		self.__eliminarMayusculas()
+		
+	def __eliminarSimbolos(self):
+		PATTERN = r'[¿¡!·"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]+'
+		REPLACE_SYMBOL = ''
 	
-		unhandled_symbols = ['.','¡','¿']
-		textoFormateado = self.Respuesta.texto.replace('·','')
-		for symbol in unhandled_symbols:
-			textoFormateado = textoFormateado.replace(symbol,'')
+		tokens = list(map(lambda tk: re.sub(PATTERN,REPLACE_SYMBOL,tk), self.Tokens))
 		
-		textoNormalizado = unidecode(textoFormateado)
-		
-		tokens = word_tokenize(textoNormalizado)
-		
-		if len(tokens) > 0:
-			self.Tokens = tokens
+		if tokens.count(REPLACE_SYMBOL) == len(tokens):
+			raise Exception("El texto no contiene palabras.")
 			
 		else:
+			self.Tokens = tokens
+
+	def __eliminarTokensNulos(self):
+		NULL_TOKEN = ''
+		tokens = list(filter(lambda tk: tk != NULL_TOKEN, self.Tokens))
+		
+		if len(tokens) == 0:
 			raise Exception("No hay contenido en la respuesta proporcionada.")
 			
-	def eliminarSimbolos(self):
-		
-		tokens = [tk for tk in self.Tokens if tk not in punctuation]
-		
-		if len(tokens) > 0:
-			self.Tokens = tokens
-			
 		else:
-			raise Exception("El texto no contiene palabras.")
-
+			self.Tokens = tokens
 	
-	def tokensMinusculas(self):
-		
-		self.Tokens = [tk.lower() for tk in self.Tokens]
+	def __eliminarMayusculas(self):
+		self.Tokens = list(map(lambda tk: tk.lower(), self.Tokens))
 		
 	def eliminarStopwords(self):
-		
-		stopWords = set(stopwords.words('spanish'))
+		STOPWORDS = list(stopwords.words('spanish'))
 
-		tokens = [tk for tk in self.Tokens if tk not in stopWords]
+		tokens = [tk for tk in self.Tokens if tk not in STOPWORDS]
 		
 		if len(tokens) > 0:
 			self.Tokens = tokens
 			
 		else:
 			raise Exception("El texto sólo contiene palabras vacías.")
-		
