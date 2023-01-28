@@ -3,7 +3,6 @@ from supercatch.respuesta import Respuesta
 from string import punctuation
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-from nltk.stem import SnowballStemmer
 from unidecode import unidecode
 
 #Entidad que procesa el texto de las respuestas obteniendo los tokens
@@ -79,13 +78,4 @@ class TokensRespuesta:
 			
 		else:
 			raise Exception("El texto sólo contiene palabras vacías.")
-			
-	def segmentarTokens(self):
-		"""
-		Calcula los stem de los tokens
-		"""
-		
-		stemmer = SnowballStemmer('spanish')
-		
-		self.Tokens = [stemmer.stem(tk) for tk in self.Tokens]
 		
