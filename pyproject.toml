@@ -10,16 +10,16 @@ python = "^3.7"
 
 [tool.poetry.dev-dependencies]
 nltk = "^3.8.1"
-unidecode = "^1.3.6"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.2.0"
+pytest-xdist = "^3.1.0"
 pyhamcrest = "^2.0.4"
 
 [tool.poe.tasks]
 install = "poetry install" 
 check = "python -m compileall supercatch"
-test = "poetry run pytest -v tests/test_pnl.py"
+test = "poetry run pytest -v tests/test_pnl.py -n 3"
 nltk_data = "python -c 'import nltk; nltk.download(\"stopwords\")'"
 
 [build-system]
