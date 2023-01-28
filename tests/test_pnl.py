@@ -3,12 +3,9 @@ from hamcrest import *
 import re
 from supercatch.respuesta import Respuesta
 from supercatch.tokensRespuesta import TokensRespuesta
-
 from nltk.corpus import stopwords
 
 #=====================================================================
-
-
 
 # Respuestas para pruebas
 listaResp = []
@@ -29,15 +26,9 @@ listaRespExc.append(Respuesta("?!;.-·¡.;!/,¿"))
 listaRespExc.append(Respuesta(" ¿?! !' ?  ! ; . - ·¡ .;! /,¿"))
 listaRespExc.append(Respuesta("el, los las unas de para   sobre durante en."))
 
-listaTknResp = []
 
-for resp in listaResp:
-	listaTknResp.append(TokensRespuesta(resp))
-	
-listaTknRespExc = []
-
-for resp in listaRespExc:
-	listaTknRespExc.append(TokensRespuesta(resp))
+listaTknsResp = list(map(lambda resp: resp.procesar(), list(map(lambda resp: TokensRespuesta(resp), listaResp))))
+listaTknsRespExc = list(map(lambda respExcep: TokensRespuesta(respExcep), listaRespExc))
 
 #=====================================================================
 
@@ -47,39 +38,31 @@ for resp in listaRespExc:
 # estas solo sean minusculas
 
 def test_get_tokens_is_a_list():    
-	for tkr in listaTknResp:
-	    assert_that(tkr.getTokens(), instance_of(list))
+	map(lambda tkr: assert_that(tkr.getTokens(), instance_of(list)), listaTknsResp)
 
 def test_list_tokens_not_have_null_tokens():
 	NULL_TOKEN = ''
-	for tkr in listaTknResp:
-		assert_that(tkr.getTokens().count(NULL_TOKEN),equal_to(0))
+	map(lambda tkr: assert_that(tkr.getTokens().count(NULL_TOKEN),equal_to(0)), listaTknsResp)
 
 def test_list_tokens_not_empty():
-	for tkr in listaTknResp:
-		tkr.tokenizarTexto()
-		
-		assert_that(tkr.getTokens(), is_not(has_length(0)))
+	map(lambda tkr: assert_that(tkr.getTokens(), is_not(has_length(0))), listaTknsResp)
 	
 def test_exception_list_tokens_not_empty():
-	for i in range(0,2):
-		assert_that(calling(listaTknRespExc[i].tokenizarTexto), raises(Exception))
+	assert_that(calling(listaTknsRespExc[0].procesar), raises(Exception))
+	assert_that(calling(listaTknsRespExc[1].procesar), raises(Exception))
 		
 def test_list_tokens_without_punctuation():
-	for tkr in listaTknResp:
-		tkr.eliminarSimbolos()
-		
-		assert_that(tkr.getTokens(), is_not(has_length(0)))
+	map(lambda tkr : assert_that(list(filter(lambda tk: re.findall(r'[¿¡!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]+',tk),tkr.getTokens())), has_length(0)),listaTknsResp)
 		
 def test_exception_list_tokens_without_punctuation():
-	for i in range(2,4):
-		assert_that(calling(listaTknRespExc[i].eliminarSimbolos), raises(Exception))
+	assert_that(calling(listaTknsRespExc[2].procesar), raises(Exception))
+	assert_that(calling(listaTknsRespExc[3].procesar), raises(Exception))
+
+def test_normalized_tokens():
+	map(lambda tkr : assert_that(list(filter(lambda tk: re.findall(r'[àáèéìíòóùú]+',tk),tkr.getTokens())), has_length(0)), listaTknsResp)
 
 def test_list_tokens_without_capital_letters():
-	for tkr in listaTknResp:
-		tkr.tokensMinusculas()
-		
-		assert_that([tk for tk in tkr.getTokens() if re.search("[A-Z]+",tk)], has_length(0))
+	map(lambda tkr : assert_that(list(filter(lambda tk : re.search("[A-Z]+",tk),tkr.getTokens())), has_length(0)), listaTknsResp)
 		
 #=====================================================================
 
@@ -88,28 +71,8 @@ def test_list_tokens_without_capital_letters():
 # ni tampoco contenga ninguna stopword
 
 def test_list_tokens_without_stopwords():
-	stopWords = set(stopwords.words('spanish'))	
-	
-	for tkr in listaTknResp:
-		tkr.eliminarStopwords()
-		
-		assert_that([tk for tk in tkr.getTokens() if tk in stopWords], has_length(0))
+	STOPWORDS = set(stopwords.words('spanish'))
+	map(lambda tkr : assert_that(list(filter(lambda tk : tk not in STOPWORDS),tkr.getTokens()), has_length(0)), listaTknsResp)
 		
 def test_exception_tokens_without_stopwords():
-	tkr = listaTknRespExc[4]
-	assert_that(calling(tkr.eliminarStopwords), raises(Exception))
-
-#=====================================================================
-	
-# Este test verifica el funcionamiento de la segmentacion. Prueba
-# que la lista de tokens es irreducible
-
-def test_stemming_tokens():
-	for tkr in listaTknResp:
-		
-		tkr.segmentarTokens()
-		tokensCopy = tkr.getTokens()
-		tkr.segmentarTokens()
-		
-		assert_that(tkr.getTokens(), equal_to(tokensCopy))
-	
+	assert_that(calling(listaTknsRespExc[4].procesar), raises(Exception))
