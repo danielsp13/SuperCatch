@@ -5,27 +5,16 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from unidecode import unidecode
 
-#Entidad que procesa el texto de las respuestas obteniendo los tokens
-# que lo identifican
 class TokensRespuesta:
-	Respuesta: Respuesta
 	Tokens: list
 	
 	def __init__(self,resp):
-		self.Respuesta = resp
-		self.Tokens = []
-		
-		
-	def getRespuesta(self):
-		return self.Respuesta
+		self.Tokens = resp.texto.split()
 		
 	def getTokens(self):
 		return self.Tokens
 
 	def tokenizarTexto(self):
-		"""
-		Normaliza y particiona una respuesta, obteniendo sus tokens
-		"""
 	
 		unhandled_symbols = ['.','¡','¿']
 		textoFormateado = self.Respuesta.texto.replace('·','')
@@ -43,9 +32,6 @@ class TokensRespuesta:
 			raise Exception("No hay contenido en la respuesta proporcionada.")
 			
 	def eliminarSimbolos(self):
-		"""
-		Elimina los tokens que no contienen caracteres
-		"""
 		
 		tokens = [tk for tk in self.Tokens if tk not in punctuation]
 		
@@ -57,17 +43,10 @@ class TokensRespuesta:
 
 	
 	def tokensMinusculas(self):
-		"""
-		Transforma los caracteres que contienen mayusculas
-		a minusculas
-		"""
 		
 		self.Tokens = [tk.lower() for tk in self.Tokens]
 		
 	def eliminarStopwords(self):
-		"""
-		Elimina los tokens que son palabras vacias
-		"""
 		
 		stopWords = set(stopwords.words('spanish'))
 
