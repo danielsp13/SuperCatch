@@ -14,9 +14,11 @@ Para ello, se ha creado un *objeto valor* denominado `Respuesta`, que simplement
 
 ### [M1] : Implementación de algoritmos y estructuras de Procesamiento del Lenguaje Natural (PLN)
 
-Este primer hito ya sí corresponde con lo que sería la lógica de negocio del proyecto. En un principio, no estaba considerado, pero tras realizar un análisis en lo que se quiere implementar, surgió un problema que da sentido a este objetivo: ***el procesamiento del texto de las respuestas escritas en lenguaje natural***. Esta cuestión, no es trivial de resolver y suele tener unas dimensiones generalmente grandes en otros ámbitos. 
+Este primer hito ya sí corresponde con lo que sería la lógica de negocio del proyecto. En un principio, no estaba considerado, pero tras realizar un análisis en lo que se quiere implementar, surgió un problema que da sentido a este objetivo: ***el procesamiento del texto de las respuestas escritas en lenguaje natural***.
 
 Para solucionar este problema, se ha decidido crear una *entidad* denominada `TokensRespuesta`, que realice el procesamiento de las respuestas y obtenga una estructura (una lista) que pueda ser utilizada por el algoritmo de similitud del coseno, que será el utilizado a posteriori para realizar la comparación.
+
+Lo que da valor a esta entidad es que conseguimos reducir una posible respuesta que contenga cientos de palabras en un conjunto de ellas que tengan cierta relevancia, por lo que el proceso de corrección de exámenes se realizará más rápido, y por supuesto, de forma más efectiva.
 
 Las fases consideradas en el procesamiento de las respuestas son:
 
