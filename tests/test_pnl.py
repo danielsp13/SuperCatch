@@ -26,8 +26,11 @@ listaRespExc.append(Respuesta("?!;.-·¡.;!/,¿"))
 listaRespExc.append(Respuesta(" ¿?! !' ?  ! ; . - ·¡ .;! /,¿"))
 listaRespExc.append(Respuesta("el, los las unas de para   sobre durante en."))
 
+listaTknsResp = list(map(lambda resp: TokensRespuesta(resp),listaResp))
 
-listaTknsResp = list(map(lambda resp: resp.procesar(), list(map(lambda resp: TokensRespuesta(resp), listaResp))))
+for tkr in listaTknsResp:
+	tkr.procesar()
+
 listaTknsRespExc = list(map(lambda respExcep: TokensRespuesta(respExcep), listaRespExc))
 
 #=====================================================================
@@ -38,31 +41,37 @@ listaTknsRespExc = list(map(lambda respExcep: TokensRespuesta(respExcep), listaR
 # estas solo sean minusculas
 
 def test_get_tokens_is_a_list():    
-	map(lambda tkr: assert_that(tkr.getTokens(), instance_of(list)), listaTknsResp)
+	for tkr in listaTknsResp:
+		assert_that(tkr.getTokens(), instance_of(list))
 
 def test_list_tokens_not_have_null_tokens():
 	NULL_TOKEN = ''
-	map(lambda tkr: assert_that(tkr.getTokens().count(NULL_TOKEN),equal_to(0)), listaTknsResp)
+	for tkr in listaTknsResp:
+		assert_that(tkr.getTokens().count(NULL_TOKEN),equal_to(0))
 
 def test_list_tokens_not_empty():
-	map(lambda tkr: assert_that(tkr.getTokens(), is_not(has_length(0))), listaTknsResp)
+	for tkr in listaTknsResp:
+		assert_that(tkr.getTokens(), is_not(has_length(0)))
 	
 def test_exception_list_tokens_not_empty():
 	assert_that(calling(listaTknsRespExc[0].procesar), raises(Exception))
 	assert_that(calling(listaTknsRespExc[1].procesar), raises(Exception))
 		
 def test_list_tokens_without_punctuation():
-	map(lambda tkr : assert_that(list(filter(lambda tk: re.findall(r'[¿¡!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]+',tk),tkr.getTokens())), has_length(0)),listaTknsResp)
+	for tkr in listaTknsResp:
+		assert_that(list(filter(lambda tk: re.findall(r'[¿¡·!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]+',tk),tkr.getTokens())) ,has_length(0))
 		
 def test_exception_list_tokens_without_punctuation():
 	assert_that(calling(listaTknsRespExc[2].procesar), raises(Exception))
 	assert_that(calling(listaTknsRespExc[3].procesar), raises(Exception))
 
 def test_normalized_tokens():
-	map(lambda tkr : assert_that(list(filter(lambda tk: re.findall(r'[àáèéìíòóùú]+',tk),tkr.getTokens())), has_length(0)), listaTknsResp)
+	for tkr in listaTknsResp:
+		assert_that(list(filter(lambda tk: re.findall(r'[àáèéìíòóùú]+',tk), tkr.getTokens())), has_length(0))
 
 def test_list_tokens_without_capital_letters():
-	map(lambda tkr : assert_that(list(filter(lambda tk : re.search("[A-Z]+",tk),tkr.getTokens())), has_length(0)), listaTknsResp)
+	for tkr in listaTknsResp:
+		assert_that(list(filter(lambda tk: re.search("[A-Z]+",tk), tkr.getTokens())), has_length(0))
 		
 #=====================================================================
 
@@ -72,7 +81,8 @@ def test_list_tokens_without_capital_letters():
 
 def test_list_tokens_without_stopwords():
 	STOPWORDS = set(stopwords.words('spanish'))
-	map(lambda tkr : assert_that(list(filter(lambda tk : tk not in STOPWORDS),tkr.getTokens()), has_length(0)), listaTknsResp)
+	for tkr in listaTknsResp:
+		assert_that(list(filter(lambda tk : tk in STOPWORDS,tkr.getTokens())), has_length(0))
 		
 def test_exception_tokens_without_stopwords():
 	assert_that(calling(listaTknsRespExc[4].procesar), raises(Exception))
