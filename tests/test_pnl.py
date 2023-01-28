@@ -35,10 +35,13 @@ listaTknsRespExc = list(map(lambda respExcep: TokensRespuesta(respExcep), listaR
 
 #=====================================================================
 
-#Este bloque de tests verifican el funcionamiento del análisis léxico.
-# Prueban que la lista de tokens es una lista no vacía, que no contiene
-# tokens vacíos, ni tampoco sin caracteres; y si contienen letras,
-# estas solo sean minusculas
+
+"""
+Bloque de tests que verifican el funcionamiento del analisis lexico.
+Prueban que la lista de tokens es una lista no vacia, que no contiene
+tokens nulos, ni tampoco sin caracteres; y si contienen letras, estas
+solo sean minusculas
+"""
 
 def test_get_tokens_is_a_list():    
 	for tkr in listaTknsResp:
@@ -58,26 +61,34 @@ def test_exception_list_tokens_not_empty():
 	assert_that(calling(listaTknsRespExc[1].procesar), raises(Exception))
 		
 def test_list_tokens_without_punctuation():
+	PATTERN = r'[¿¡·!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]+'
+
 	for tkr in listaTknsResp:
-		assert_that(list(filter(lambda tk: re.findall(r'[¿¡·!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]+',tk),tkr.getTokens())) ,has_length(0))
+		assert_that(list(filter(lambda tk: re.findall(PATTERN,tk),tkr.getTokens())) ,has_length(0))
 		
 def test_exception_list_tokens_without_punctuation():
 	assert_that(calling(listaTknsRespExc[2].procesar), raises(Exception))
 	assert_that(calling(listaTknsRespExc[3].procesar), raises(Exception))
 
 def test_normalized_tokens():
+	PATTERN = r'[àáèéìíòóùú]+'
+
 	for tkr in listaTknsResp:
-		assert_that(list(filter(lambda tk: re.findall(r'[àáèéìíòóùú]+',tk), tkr.getTokens())), has_length(0))
+		assert_that(list(filter(lambda tk: re.findall(PATTERN,tk), tkr.getTokens())), has_length(0))
 
 def test_list_tokens_without_capital_letters():
+	PATTERN = r'[A-Z]+'	
+	
 	for tkr in listaTknsResp:
-		assert_that(list(filter(lambda tk: re.search("[A-Z]+",tk), tkr.getTokens())), has_length(0))
+		assert_that(list(filter(lambda tk: re.search(PATTERN,tk), tkr.getTokens())), has_length(0))
 		
 #=====================================================================
 
-# Este bloque de tests verifican el funcionamiento de la eliminacion
-# de palabras vacias. Prueba que la lista de tokens no sea vacia,
-# ni tampoco contenga ninguna stopword
+"""
+Bloque de tests que verifican el funcionamiento de la eliminacion
+de palabras vacias. Prueba que la lista de tokens no sea vacia, ni
+tampoco contenga ninguna stopword
+"""
 
 def test_list_tokens_without_stopwords():
 	STOPWORDS = set(stopwords.words('spanish'))
