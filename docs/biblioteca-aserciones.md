@@ -9,6 +9,7 @@ En este documento se especifican los criterios para la elección de una bibliote
 Cualquier herramienta que considere como potencial para usarla en el proyecto, debe cumplimentar:
 
 1. ***Herramienta activa***. Debe considerarse una herramienta que tenga actualizaciones con relativa frecuencia y un soporte continuado y activo.
+2. ***Ausencia de problemas de seguridad.*** La herramienta no debe tener brechas de seguridad que puedan comprometer a la aplicación.
 
 ****
 
@@ -18,6 +19,10 @@ Los tres gestores de dependencias especificados, son totalmente válidos para su
 
 * :warning: ***Popularidad***: A través de artículos y otros lugares de la comunidad, se estudiará qué opinión y valoración dan las personas que utilizan dichas herramientas. Se tendrá en cuenta las recomendaciones oportunas.
 * :warning: ***Sencillez de uso***. Si dos bibliotecas pueden ser potencialmente candidatas a su elección, se considerará aquella que permita trabajar con mayor comodidad, en cuestiones por ejemplo como una sintaxis sencilla. No obstante, nunca será una prioridad si hay una herramienta que pueda ofrecer mejores prestaciones.
+
+****
+
+Para medir todos los criterios se ha utilizado la herramienta [Snyk Advisor](https://snyk.io/advisor/python/) , que examina módulos de Python según una serie de criterios (como los que se han mencionado) y otorga una puntuación en un rango de 0 a 100.
 
 ****
 
@@ -34,20 +39,24 @@ A1. **[unittest](https://docs.python.org/3/library/unittest.html)** :
 * (op1) Popularidad de la herramienta: :heavy_check_mark: 
   * Al ser una herramienta nativa, suele ser recomendada por bastantes usuarios, debido a que no requiere instalación de otras herramientas de terceros.
 
-A2. **[PyHamcrest](https://github.com/hamcrest/PyHamcrest)** : 
+A2. **[PyHamcrest](https://github.com/hamcrest/PyHamcrest)** : [Puntuación en [Snyk - Pyhamcrest](https://snyk.io/advisor/python/pyhamcrest) : 85]
 * (1) Herramienta activa: Último  (27-07-2022) :heavy_check_mark: . 
   * (En su github, tiene contribuciones recientes, a pesar de haber lanzado la última versión registrada hace más de medio año.)
-* (2) Información acerca de la herramienta:
+* (2) Seguridad: :heavy_check_mark:.
+  * No se han detectado problemas, bugs o fallos de seguridad recientes que rechacen su uso.
+
+* (3) Información acerca de la herramienta:
   * Dispone de múltiples funciones de aserción, entre ellas, referida a excepciones. [PyHamcrest : matchers](https://github.com/hamcrest/PyHamcrest#predefined-matchers)
   * La escritura de los tests se realiza de forma más entendible posible para su lectura, como por ejemplo comentan en [PyHamcrest : Syntactic Sugar](https://github.com/hamcrest/PyHamcrest#syntactic-sugar)
 * (op1) Popularidad de la herramienta: :heavy_check_mark: 
   * Es de las herramientas más populares entre la comunidad, además de ser influyente en gran cantidad de proyectos.
-  * No se han detectado problemas, bugs o fallos de seguridad recientes que rechacen su uso.
 
-A3. **[Hypothesis](https://hypothesis.readthedocs.io/en/latest/)** : 
+A3. **[Hypothesis](https://hypothesis.readthedocs.io/en/latest/)** : [Puntuación en [Snyk - Hypothesis](https://snyk.io/advisor/python/hypothesis) : 100]
 * (1) Herramienta activa: Último  (14-01-2023) :heavy_check_mark: . 
   * (En su github [HypothesisWorks/hypothesis_pyhton](https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python), tiene contribuciones recientes, además, de haber sacado una última versión en este nuevo año)
-* (2) Información acerca de la herramienta:
+* (2) Seguridad: :heavy_check_mark:.
+  * No se han detectado problemas, bugs o fallos de seguridad recientes que rechacen su uso.
+* (3) Información acerca de la herramienta:
   * Permite la creación de tests unitarios de forma más simple que otras bibliotecas.
   * Además, permite escribir tests bajo el paradigma de testeo basado en propiedades.
   * Trabaja con datos/estructuras generados mediante estrategias.
