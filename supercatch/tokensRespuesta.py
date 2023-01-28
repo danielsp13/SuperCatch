@@ -16,6 +16,8 @@ class TokensRespuesta:
 		self.__eliminarSimbolos()
 		self.__eliminarTokensNulos()
 		self.__eliminarMayusculas()
+		self.__eliminarAcentos()
+		self.__eliminarStopwords()
 		
 	def __eliminarSimbolos(self):
 		PATTERN = r'[¿¡!·"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]+'
@@ -42,13 +44,32 @@ class TokensRespuesta:
 	def __eliminarMayusculas(self):
 		self.Tokens = list(map(lambda tk: tk.lower(), self.Tokens))
 		
-	def eliminarStopwords(self):
-		STOPWORDS = list(stopwords.words('spanish'))
+	def __eliminarStopwords(self):
+		UNHANDLED_STOPWORDS = ['unas']
+		STOPWORDS = list(stopwords.words('spanish')) + UNHANDLED_STOPWORDS
 
-		tokens = [tk for tk in self.Tokens if tk not in STOPWORDS]
+		tokens = list(filter(lambda tk: tk not in STOPWORDS,self.Tokens))
 		
-		if len(tokens) > 0:
-			self.Tokens = tokens
+		if len(tokens) == 0:
+			raise Exception("El texto sólo contiene palabras vacías.")
 			
 		else:
-			raise Exception("El texto sólo contiene palabras vacías.")
+			self.Tokens = tokens
+			
+	def __eliminarAcentos(self):
+		ACCENTS = {'a':'([àá]+)', 'e':'([èé]+)', 'i':'([ìí]+)', 'o':'([òó]+)', 'u':'([ùú]+)'}
+		PATTERN = re.compile('|'.join(ACCENTS.values()))
+		
+		def conversor(match):
+			if match.group(1) is not None:
+				return list(ACCENTS.keys())[0]
+			if match.group(2) is not None:
+				return list(ACCENTS.keys())[1]
+			if match.group(3) is not None:
+				return list(ACCENTS.keys())[2]
+			if match.group(4) is not None:
+				return list(ACCENTS.keys())[3]
+			if match.group(5) is not None:
+				return list(ACCENTS.keys())[4]
+		
+		self.Tokens = list(map(lambda tk: re.sub(PATTERN,conversor,tk), self.Tokens))
