@@ -1,7 +1,7 @@
 from hamcrest import *
 
 import re
-from supercatch.tokensRespuesta import *
+from supercatch.pln import *
 from supercatch.respuesta import Respuesta
 from nltk.corpus import stopwords
 
