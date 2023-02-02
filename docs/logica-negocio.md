@@ -12,6 +12,10 @@ El problema principal, planteado en uno de los issues en el repositorio, es cóm
 
 Para ello, se ha creado un *objeto valor* denominado `Respuesta`, que simplemente, contiene el texto de la respuesta considerada.
 
+A continuación, otras de las cuestiones está en cómo agrupar estas respuestas y cómo almacenar las calificaciones que tienen cada una de ellas. Para ello, se ha creado una entidad, denominada `Examen`, que contiene las respuestas del alumno y las calificaciones obtenidas tras haber corregido el mismo.
+
+Finalmente, hay un matiz importante a considerar, y es que la idea general para la automatización de la tarea de correción de exámenes es comparar un modelo con un examen respondido por un alumno, es por ello por lo que también se define un objeto denominado `Modelo`, que represente el conjunto de respuestas correctas propuestas por el profesor.
+
 ### [M1] : Implementación de algoritmos y estructuras de Procesamiento del Lenguaje Natural (PLN)
 
 Este primer hito ya sí corresponde con lo que sería la lógica de negocio del proyecto. En un principio, no estaba considerado, pero tras realizar un análisis en lo que se quiere implementar, surgió un problema que da sentido a este objetivo: ***el procesamiento del texto de las respuestas escritas en lenguaje natural***.
