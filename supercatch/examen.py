@@ -1,4 +1,4 @@
-from respuesta import Respuesta
+from supercatch.respuesta import Respuesta
 
 class Modelo:
 	respuestas: list
