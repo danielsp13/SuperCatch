@@ -1,5 +1,6 @@
 lenguaje: python
 entidad:
+  - supercatch/examen.py
 automatizar:
   fichero: pyproject.toml
   orden: poe
