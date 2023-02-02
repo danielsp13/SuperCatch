@@ -19,7 +19,7 @@ pyhamcrest = "^2.0.4"
 [tool.poe.tasks]
 install = "poetry install" 
 check = "python -m compileall supercatch"
-test = "poetry run pytest -v tests/test_pnl.py -n 3"
+test = "poetry run pytest -v -n 3"
 nltk_data = "python -c 'import nltk; nltk.download(\"stopwords\")'"
 
 [build-system]
