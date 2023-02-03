@@ -8,9 +8,19 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.7"
 
+[tool.poetry.dev-dependencies]
+nltk = "^3.8.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.0"
+pytest-xdist = "^3.1.0"
+pyhamcrest = "^2.0.4"
+
 [tool.poe.tasks]
-install = "poetry install"
-check = "python -m compileall src"
+install = "poetry install" 
+check = "python -m compileall supercatch"
+test = "poetry run pytest -v -n 3"
+nltk_data = "python -c 'import nltk; nltk.download(\"stopwords\")'"
 
 [build-system]
 requires = ["poetry-core"]

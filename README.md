@@ -33,10 +33,24 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 
 
 * :busts_in_silhouette: [Usuarios](docs/users.md) : Se especifican los tipos de usuarios que utilizarán nuestra solución.
+
 * :notebook: [Historias de Usuario](docs/user-stories.md) : Se especifican las historias de usuario, útiles para especificar adecuadamente las fases del proyecto y el desarrollo de la solución.
+
 * :checkered_flag: [Milestones](docs/milestones.md) : Se especifican los hitos a conseguir durante el desarrollo del proyecto.
+
 * :gear: [Gestor dependencias](docs/gestor-dependencias.md) : Se especifican los criterios establecidos para la elección del gestor de tareas. **poetry**.
+
 * :runner: [Gestor tareas](docs/gestor-tareas.md) : Se especifican los criterios establecidos para la elección del gestor de tareas. **poethepoet**.
+
+* :rabbit2: [Test Runner](docs/test-runner.md) : Se especifican los criterios establecidos para la elección del test runner. **pytest**
+
+* :heavy_check_mark: [Biblioteca de Aserciones](docs/biblioteca-aserciones.md) : Se especifican los criterios establecidos para la elección de biblioteca de aserciones. **PyHamcrest**
+
+  
+
+* :books: [Dependencias](docs/dependencias.md) : Se especifican las bibliotecas externas utilizadas en el desarrollo del proyecto.
+
+* :bulb: [Lógica de Negocio](docs/logica-negocio.md) : Se especifica la implementación realizada en las diferentes fases del proyecto consideradas en los milestones.
 
 ****
 
@@ -58,12 +72,28 @@ $ poe install
 
 *Se creará un entorno virtual para la instalación de las dependencias utilizadas de forma aislada.*
 
+Una vez se ha realizado la anterior orden, será necesario instalar los datos de una de las bibliotecas de las que depende el proyecto, `NLTK`, de la que se habla en [dependencias](docs/dependencias.md) Para ello, hay que usar la orden:
+
+~~~bash
+$ poe nltk_data
+~~~
+
+Esta orden descarga en el directorio HOME del usuario los datos necesarios para algunas de las fases de la lógica de negocio (concretamente, la tokenización y eliminación de stopwords).
+
 
 
 Para comprobar la sintaxis de las fuentes:
 
 ~~~bash
 $ poe check
+~~~
+
+
+
+Para lanzar los tests que prueben el código implementado:
+
+~~~bash
+$ poe test
 ~~~
 
 

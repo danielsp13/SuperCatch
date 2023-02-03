@@ -1,7 +1,8 @@
 lenguaje: python
 entidad:
-  - src/respuesta.py
-  - src/resolucionExamen.py
+  - supercatch/examen.py
 automatizar:
   fichero: pyproject.toml
   orden: poe
+test:
+  - tests/test_pln.py
