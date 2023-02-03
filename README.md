@@ -52,6 +52,8 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 
 * :bulb: [Lógica de Negocio](docs/logica-negocio.md) : Se especifica la implementación realizada en las diferentes fases del proyecto consideradas en los milestones.
 
+* :whale2: [Contenedor Docker](docs/docker.md) : Se especifica los criterios para la elección de imagen base de contenedor Docker. **python-slim**
+
 ****
 
 ### :shell: Órdenes de instalación y verificación
