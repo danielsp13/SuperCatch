@@ -2,29 +2,24 @@ from hamcrest import *
 
 import re
 from supercatch.pln import *
-from supercatch.respuesta import Respuesta
 from nltk.corpus import stopwords
 
 #=====================================================================
 
 # Respuestas para pruebas
-listaResp = []
-
-listaResp.append(Respuesta("Esta es una respusta de ejemplo."))
-listaResp.append(Respuesta("   Esta   es   otra   respuesta    . "))
-listaResp.append(Respuesta("¿Qué se supone    que debo responder aquí?"))
-listaResp.append(Respuesta("   - 'A quién madruga,   Dios   le ayuda' -, dijo alguien alguna vez."))
-listaResp.append(Respuesta("eStA eS   uNA   RESPuesTA MuY DIFÍCIL de leeR. ¿Sí?"))
-listaResp.append(Respuesta("dEntRO de un AÑO, será 2024."))
+listaResp = ["Esta es una respusta de ejemplo.",
+"   Esta   es   otra   respuesta    . ",
+"¿Qué se supone    que debo responder aquí?",
+"   - 'A quién madruga,   Dios   le ayuda' -, dijo alguien alguna vez.",
+"eStA eS   uNA   RESPuesTA MuY DIFÍCIL de leeR. ¿Sí?",
+"dEntRO de un AÑO, será 2024."]
 
 # Respuestas para pruebas (excepciones)
-listaRespExc = []
-
-listaRespExc.append(Respuesta(""))
-listaRespExc.append(Respuesta("        "))
-listaRespExc.append(Respuesta("?!;.-·¡.;!/,¿"))
-listaRespExc.append(Respuesta(" ¿?! !' ?  ! ; . - ·¡ .;! /,¿"))
-listaRespExc.append(Respuesta("el, los las unas de para   sobre durante en."))
+listaRespExc = ["",
+"        ",
+"?!;.-·¡.;!/,¿",
+" ¿?! !' ?  ! ; . - ·¡ .;! /,¿",
+"el, los las unas de para   sobre durante en."]
 
 #=====================================================================
 

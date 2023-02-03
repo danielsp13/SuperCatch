@@ -1,9 +1,8 @@
-from supercatch.respuesta import Respuesta
 from supercatch.examen import Examen, Modelo
 from supercatch.pln import *
 from math import sqrt
 
-def obtenerPonderacionTerminos(respAlumno: Respuesta, respModelo: Respuesta):
+def obtenerPonderacionTerminos(respAlumno: str, respModelo: str):
 	TOKENS_ALUMNO = obtenerTokens(respAlumno)
 	TOKENS_MODELO = obtenerTokens(respModelo)
 
@@ -24,7 +23,7 @@ def obtenerPonderacionTerminos(respAlumno: Respuesta, respModelo: Respuesta):
 	return ponderacion
 
 	
-def calificarRespuesta(respAlumno: Respuesta, respModelo: Respuesta):
+def calificarRespuesta(respAlumno: str, respModelo: str):
 	PONDERACIONES = obtenerPonderacionTerminos(respAlumno,respModelo)
 	V_ALUMNO = PONDERACIONES[0]; V_MODELO = PONDERACIONES[1]
 	FACTOR = 10

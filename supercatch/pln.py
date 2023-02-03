@@ -1,5 +1,3 @@
-from supercatch.respuesta import Respuesta
-
 import re
 from nltk.corpus import stopwords
 
@@ -8,7 +6,7 @@ Función que realiza análisis léxico sobre el texto de una respuesta.
 Convierte las mayúsculas a minúsculas, elimina símbolos y acentos, devolviendo
 la lista de palabras que conforman el texto
 """
-def procesarTexto(resp: Respuesta):
+def procesarTexto(resp: str):
 	SYMBOLS = '([¿¡!·"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]+)'
 	
 	ACCENTS = {'a':'([àá]+)', 'e':'([èé]+)', 'i':'([ìí]+)', 'o':'([òó]+)', 'u':'([ùú]+)'}
@@ -33,13 +31,13 @@ def procesarTexto(resp: Respuesta):
 		if match.group(6) is not None:
 			return list(ACCENTS.keys())[4]
 	
-	return re.sub(PATTERN,conversor,resp.texto.lower())
+	return re.sub(PATTERN,conversor,resp.lower())
 	
 """
 Función que obtiene los tokens de una respuesta y elimina las
 palabras vacias.
 """
-def obtenerTokens(resp: Respuesta):
+def obtenerTokens(resp: str):
 	NULL_TOKEN = ''
 	
 	UNHANDLED_STOPWORDS = ['unas']

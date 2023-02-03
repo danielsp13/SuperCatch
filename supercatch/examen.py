@@ -1,12 +1,10 @@
-from supercatch.respuesta import Respuesta
-
 class Modelo:
 	respuestas: list
 	
 	def __init__(self,resp = []):
 		self.respuestas = resp
 		
-	def addRespuesta(self, resp: Respuesta):
+	def addRespuesta(self, resp: str):
 		self.respuestas.append(resp)
 		
 	def getRespuestas(self):
