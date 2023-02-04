@@ -19,21 +19,18 @@ ENV POETRY_HOME="$HOME/.local/poetry"
 ENV PATH="${POETRY_HOME}/bin:$PATH:${HOME}/.local/bin"
 
 # Especificar directorio de trabajo
-WORKDIR $HOME
+WORKDIR /app/test
 
 # Copiar archivos necesarios
 COPY --chown=lyoko poetry.lock pyproject.toml requirements.txt ./
 
 # Instalar dependencias y eliminar ficheros no necesarios
-RUN pip install -r requirements.txt && \
+RUN pip install -r requirements.txt --no-cache-dir && \
     poe install && \
     poe nltk_data && \
     rm ./poetry.lock ./pyproject.toml ./requirements.txt && \
     rm ${HOME}/nltk_data/corpora/stopwords.zip && \
     find ${HOME}/nltk_data/corpora/stopwords -type f -not -name 'spanish' -delete
-
-# Fijar directorio de trabajo definitivo
-WORKDIR /app/test
 
 # Especificar punto de entrada
 ENTRYPOINT ["poe", "test"]
