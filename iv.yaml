@@ -6,3 +6,4 @@ automatizar:
   orden: poe
 test:
   - tests/test_pln.py
+  - tests/test_corrector.py
