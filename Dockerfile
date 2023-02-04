@@ -6,6 +6,10 @@ LABEL maintainer="danielperezruiz.10@gmail.com" \
 # Crear usuario sin privilegios
 RUN useradd -m lyoko
 
+# Establecer directorio de trabajo para test
+RUN mkdir -p /app/test && \
+    chown lyoko --recursive /app
+
 # Trabajar con usuario sin privilegios
 USER lyoko
 
@@ -27,3 +31,9 @@ RUN pip install -r requirements.txt && \
     rm ./poetry.lock ./pyproject.toml ./requirements.txt && \
     rm ${HOME}/nltk_data/corpora/stopwords.zip && \
     find ${HOME}/nltk_data/corpora/stopwords -type f -not -name 'spanish' -delete
+
+# Fijar directorio de trabajo definitivo
+WORKDIR /app/test
+
+# Especificar punto de entrada
+ENTRYPOINT ["poe", "test"]
