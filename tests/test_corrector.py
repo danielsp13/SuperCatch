@@ -1,11 +1,7 @@
 from hamcrest import *
 
-try:
-	from supercatch.corrector import *
-	from supercatch.examen import Modelo, Examen
-except:
-	from corrector import *
-	from examen import Modelo, Examen
+from supercatch.corrector import *
+from supercatch.examen import Modelo, Examen
 
 #=====================================================================
 
