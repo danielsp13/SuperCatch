@@ -13,3 +13,17 @@ USER lyoko
 ENV HOME="/home/lyoko"
 ENV POETRY_HOME="$HOME/.local/poetry"
 ENV PATH="${POETRY_HOME}/bin:$PATH:${HOME}/.local/bin"
+
+# Especificar directorio de trabajo
+WORKDIR $HOME
+
+# Copiar archivos necesarios
+COPY --chown=lyoko poetry.lock pyproject.toml requirements.txt ./
+
+# Instalar dependencias y eliminar ficheros no necesarios
+RUN pip install -r requirements.txt && \
+    poe install && \
+    poe nltk_data && \
+    rm ./poetry.lock ./pyproject.toml ./requirements.txt && \
+    rm ${HOME}/nltk_data/corpora/stopwords.zip && \
+    find ${HOME}/nltk_data/corpora/stopwords -type f -not -name 'spanish' -delete
