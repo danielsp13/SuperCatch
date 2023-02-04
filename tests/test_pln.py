@@ -1,8 +1,12 @@
 from hamcrest import *
 
 import re
-from supercatch.pln import *
 from nltk.corpus import stopwords
+
+try:
+	from supercatch.pln import *
+except:
+	from pln import *
 
 #=====================================================================
 
