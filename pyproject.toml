@@ -23,8 +23,9 @@ test = "poetry run python -m pytest -v -n 3"
 nltk_data = "python -c 'import nltk; nltk.download(\"stopwords\")'"
 
 build_docker = "docker build -t danielsp13/supercatch:latest ."
-run_docker = "docker run -it --rm danielsp13/supercatch:latest /bin/bash"
-rmi_docker = "docker rmi danielsp13/supercatch:latest"
+run_docker = "bash -c 'docker run -it --rm -v `pwd`:/app/test danielsp13/supercatch'"
+rmi_docker = "docker rmi danielsp13/supercatch"
+test_docker = ["build_docker", "run_docker"]
 
 [build-system]
 requires = ["poetry-core"]
