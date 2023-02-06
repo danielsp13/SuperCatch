@@ -32,14 +32,12 @@ Contemplando estas alternativas, hay que considerar criterios adicionales:
 *En el caso de elegir a) o b)*:
 
 * La **versión de Python** que debe contener es la última disponible (y estable). 
-* Disponer de la **utilidad `pip`**. Se debe verificar que dispone de pip, utilidad que permite instalar otras bibliotecas.
 
 
 
 *En el caso de tomar c):*
 
 * Disponer de **gestor de paquetes** u **otra utilidad de descarga/instalación** que permita instalar la última versión de Python, pues evidentemente, si no viene con la imagen habrá que instalarlo.
-* Disponer de la **utilidad `pip`**.
 
 ****
 
@@ -148,15 +146,15 @@ SO.3: **[fedora:latest](https://hub.docker.com/_/fedora)** :heavy_check_mark:
 
 Las imágenes que pueden ser válidas para el proyecto son:`python-slim`, `debian-latest`, `debian-stable-slim`, y `fedora-latest`. Para determinar definitivamente la elegida, se tendrá en cuenta que:
 
-* En `python-slim`, ya disponemos de Python `versión 3.11.1` instalado y con la utilidad `pip`para instalar más dependencias. 
+* En `python-slim`, ya disponemos de Python `versión 3.11.1` instalado.
   * Tamaño de la imagen descomprimida: 128 MB.
-* En `debian-latest`, no disponemos de Python ni de `pip`, y la instalación manual de ambas requiere de un espacio adicional de aproximadamente +500 MB, ya que `pip` necesita de muchos paquetes adicionales para su correcta instalación.
+* En `debian-latest`, no disponemos de Python, y la instalación manual requiere de un espacio adicional de aproximadamente +200MB.
   * Tamaño de la imagen descomprimida: 124 MB.
 * En `debian-stable-slim`, sucede exactamente lo mismo que en la versión latest.
   * Tamaño de la imagen descomprimida: 80.5 MB.
-* En `fedora-latest`, sí disponemos de Python  `versión 3.11.0`, pero no disponemos de la utilidad `pip`, por lo que hay que instalarla, requiriendo un espacio adicional aproximado de +7MB.
+* En `fedora-latest`, sí disponemos de Python  `versión 3.11.0`.
   * Tamaño de la imagen descomprimida: 184 MB.
 
 
 
-En definitiva, las únicas imágenes candidatas son `python-slim`, y `fedora-latest`. Sin embargo, siguiendo el principio del primer criterio, se elige como imagen candidata la versión `python-slim`, ya que de las dos es la que tiene menor tamaño, y contiene los útiles básicos para cubrir otras necesidades como instalación de dependencias.
+En definitiva, las únicas imágenes candidatas son `python-slim`, y `fedora-latest`. Sin embargo, siguiendo el principio del primer criterio, se elige como imagen candidata la versión `python-slim`, ya que de las dos es la que tiene menor tamaño.

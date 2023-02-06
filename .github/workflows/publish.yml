@@ -6,7 +6,6 @@ on:
          - 'Dockerfile'
          - 'poetry.lock'
          - 'pyproject.toml'
-         - 'requirements.txt'
          
 jobs:
   build_and_push:
