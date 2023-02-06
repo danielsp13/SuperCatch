@@ -52,6 +52,8 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 
 * :bulb: [Lógica de Negocio](docs/logica-negocio.md) : Se especifica la implementación realizada en las diferentes fases del proyecto consideradas en los milestones.
 
+* :whale2: [Contenedor Docker](docs/docker.md) : Se especifica los criterios para la elección de imagen base de contenedor Docker. **python-slim**
+
 ****
 
 ### :shell: Órdenes de instalación y verificación
@@ -95,6 +97,32 @@ Para lanzar los tests que prueben el código implementado:
 ~~~bash
 $ poe test
 ~~~
+
+
+
+Para construir la imagen del contenedor Docker en local (requiere tener docker instalado):
+
+~~~bash
+$ poe build_docker
+~~~
+
+
+
+Para ejecutar el contenedor Docker y abrir una shell sin privilegios (eliminando el contenedor tras finalizar):
+
+~~~bash
+$ poe run_docker
+~~~
+
+
+
+Para eliminar la imagen del contenedor Docker:
+
+~~~bash
+$ poe rmi_docker
+~~~
+
+ 
 
 
 
