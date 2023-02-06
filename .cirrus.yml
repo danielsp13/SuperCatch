@@ -1,5 +1,5 @@
-task:
+test_docker:
    name: Test Docker Container
    container:
        image: danielsp13/supercatch
-   test_script: docker run -u 1001 -t -v `pwd`:/app/test danielsp13/supercatch
+   test_script: poe test
