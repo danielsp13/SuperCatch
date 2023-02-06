@@ -48,7 +48,7 @@ CI.5 **[AppVeyor](https://www.appveyor.com/docs/)**: :x:
 
 ### :bulb: Elección
 
-Se opta por elegir *Github Actions* y *Cirrus CI* como sistemas de integración, que son los que cumplen todos los criterios, aunque *Circle CI* es una posible alternativa a considerar.
+Se opta por elegir *Github Actions* y *Cirrus CI* como sistemas de integración, que son los que cumplen todos los criterios, aunque *Circle CI* es una posible alternativa a considerar, y *Semaphore* también se puede utilizar teniendo en cuenta las cuestiones indicadas.
 
 ****
 
@@ -58,3 +58,13 @@ A continuación, se indicarán las tareas que se encargarán de hacer cada siste
 
 * *GitHub Actions:* Se encargará de realizar pruebas sobre diferentes versiones de Python.
 * *Cirrus CI*: Se encargará de testear la imagen de Docker implementada.
+
+****
+
+### :vertical_traffic_light: Versiones de Python
+
+Se realizarán las pruebas en las siguientes versiones de Python ([Status of Python Versions](https://devguide.python.org/versions/)):
+
+* **Python 3.11.1:** Esta versión es la que está en el *Contenedor Docker*, por lo que se hará esta comprobación en Cirrus.
+* **Python 3.7:** Esta versión es de las últimas que disponen de soporte, estando a punto de terminar su ciclo en 2023.
+* **Python 3.12:** Esta versión es inestable, pues está todavía en desarrollo y se espera su lanzamiento oficial a partir de 2024.
