@@ -8,6 +8,6 @@ task:
       image: python:${PYTHON_VERSION}-slim
    build_script: |
      pip install poetry poethepoet
-     poetry install
-     poetry nltk_data
+     poe install
+     poe nltk_data
    test_script: poe test
