@@ -2,4 +2,4 @@ task:
    name: Test Docker Container
    container:
        image: danielsp13/supercatch
-   test_script: poe test
+   test_script: poetry run python -m pytest -v -n 3
