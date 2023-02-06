@@ -4,10 +4,10 @@ task:
       matrix:
          - PYTHON_VERSION: 3.7
          - PYTHON_VERSION: 3.12-rc
-      container:
-         image: python:${PYTHON_VERSION}-slim
-      build_script: |
-         pip install poetry poethepoet
-         poetry install
-         poetry nltk_data
-      test_script: poe test
+   container:
+      image: python:${PYTHON_VERSION}-slim
+   build_script: |
+     pip install poetry poethepoet
+     poetry install
+     poetry nltk_data
+   test_script: poe test
