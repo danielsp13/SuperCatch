@@ -23,6 +23,7 @@ jobs:
            run: |
              pip install poetry poethepoet
              poetry install
+             poe nltk_data
              
          - name: Run tests
            run: poe test
