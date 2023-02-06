@@ -12,12 +12,6 @@ En este documento se especifica el procedimiento para la elección de sistemas d
 
 ****
 
-### :star: Características adicionales para elección
-
-
-
-****
-
  ### :desktop_computer: Candidatos a la elección:
 
 CI.1 **[Github Actions](https://github.com/features/actions)**: :heavy_check_mark:
@@ -55,3 +49,12 @@ CI.5 **[AppVeyor](https://www.appveyor.com/docs/)**: :x:
 ### :bulb: Elección
 
 Se opta por elegir *Github Actions* y *Cirrus CI* como sistemas de integración, que son los que cumplen todos los criterios, aunque *Circle CI* es una posible alternativa a considerar.
+
+****
+
+### :page_facing_up: Tareas
+
+A continuación, se indicarán las tareas que se encargarán de hacer cada sistema:
+
+* *GitHub Actions:* Se encargará de realizar pruebas sobre diferentes versiones de Python.
+* *Cirrus CI*: Se encargará de testear la imagen de Docker implementada.
