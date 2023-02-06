@@ -1,0 +1,4 @@
+test_docker:
+   name: Test Docker Container
+   container:
+       image: danielsp13/supercatch
