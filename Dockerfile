@@ -11,6 +11,7 @@ RUN mkdir -p /app/test && \
 ENV HOME="/home/supercatch"
 ENV POETRY_HOME="$HOME/.local/poetry"
 ENV PATH="${POETRY_HOME}/bin:$PATH:${HOME}/.local/bin"
+ENV PYTHONPATH="/app/test"
 
 WORKDIR /app/test
 

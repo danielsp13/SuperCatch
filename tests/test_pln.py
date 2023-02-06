@@ -2,11 +2,7 @@ from hamcrest import *
 
 import re
 from nltk.corpus import stopwords
-
-try:
-	from supercatch.pln import *
-except:
-	from pln import *
+from supercatch.pln import *
 
 #=====================================================================
 
