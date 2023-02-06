@@ -54,6 +54,10 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 
 * :whale2: [Contenedor Docker](docs/docker.md) : Se especifica los criterios para la elección de imagen base de contenedor Docker. **python-slim**
 
+
+
+* :twisted_rightwards_arrows: [Integración Continua](docs/sistemas_ci.md) : Se especifican los criterios para la elección de los sistemas de integración continua, y lo que realizan. **GitHub Actions**, **Cirrus CI**.
+
 ****
 
 ### :shell: Órdenes de instalación y verificación
