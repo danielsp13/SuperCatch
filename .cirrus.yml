@@ -1,4 +1,4 @@
-test_docker:
+task:
    name: Test Docker Container
    container:
        image: danielsp13/supercatch
