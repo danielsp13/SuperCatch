@@ -8,7 +8,7 @@ jobs:
       runs-on: ubuntu-latest
       strategy:
          matrix:
-            version: [3.7, 3.12.0-alpha.4]
+            version: [3.7, 3.12-dev]
       
       steps:
          - name: Checkout
