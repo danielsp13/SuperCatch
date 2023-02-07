@@ -1,5 +1,6 @@
 task:
    name: Verify Tests
+   skip: "changesIncludeOnly('docs/*','README.md')"
    env:
       matrix:
          - PYTHON_VERSION: 3.7
