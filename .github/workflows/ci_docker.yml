@@ -2,9 +2,8 @@ name: Docker container Test
 
 on:
   push:
-      paths-ignore:
-         - 'README.md'
-         - 'docs/*'
+      paths:
+         - '**.py'
          
 jobs:
   docker_tests:
