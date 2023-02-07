@@ -7,8 +7,8 @@ task:
    container:
       image: python:${PYTHON_VERSION}-slim
    install_script: |
-     apt upgrade
-     apt install gcc -y
+     apt-get upgrade
+     apt-get install gcc -y
      pip install poetry poethepoet --no-cache-dir
      poe install
      poe nltk_data
