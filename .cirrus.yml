@@ -1,6 +1,6 @@
 task:
    name: Verify Tests
-   only-if: "changesInclude('**.py')"
+   skip: "!changesInclude('**.py')"
    env:
       matrix:
          - PYTHON_VERSION: 3.7
