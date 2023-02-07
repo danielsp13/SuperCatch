@@ -59,6 +59,10 @@ A continuación, se indicarán las tareas que se encargarán de hacer cada siste
 * *GitHub Actions:* Se encargará de testear la imagen de Docker implementada.
 * *Cirrus CI*: Se encargará de realizar pruebas sobre diferentes versiones de Python.
 
+### :grey_question: ¿Cuándo se deben ejecutar?
+
+Estas tareas deben lanzarse sólo cuando se producen cambios en las fuentes, es decir, en los ficheros que tengan que ver exclusivamente con código (de extensión `.py`). Cualquier commit realizado que contenga al menos un fichero de este tipo, provoca que se lancen las comprobaciones.
+
 ****
 
 ### :vertical_traffic_light: Versiones de Python
