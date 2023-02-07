@@ -56,8 +56,8 @@ Se opta por elegir *Github Actions* y *Cirrus CI* como sistemas de integración,
 
 A continuación, se indicarán las tareas que se encargarán de hacer cada sistema:
 
-* *GitHub Actions:* Se encargará de realizar pruebas sobre diferentes versiones de Python.
-* *Cirrus CI*: Se encargará de testear la imagen de Docker implementada.
+* *GitHub Actions:* Se encargará de testear la imagen de Docker implementada.
+* *Cirrus CI*: Se encargará de realizar pruebas sobre diferentes versiones de Python.
 
 ****
 
