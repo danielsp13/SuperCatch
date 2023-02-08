@@ -5,11 +5,12 @@ task:
       matrix:
          - PYTHON_VERSION: 3.7
          - PYTHON_VERSION: 3.12-rc
+      PYTHONPATH: /usr/lib/python3/dist-packages
    container:
       image: python:${PYTHON_VERSION}-slim
    install_script: |
      apt-get update
-     apt-get install gcc libffi-dev -y
+     apt-get install python3-cffi -y
      pip install poetry poethepoet --no-cache-dir
      poe install
      poe nltk_data
