@@ -69,6 +69,6 @@ Estas tareas deben lanzarse sólo cuando se producen cambios en las fuentes, es 
 
 Se realizarán las pruebas en las siguientes versiones de Python, donde se han comparado todas las que hay en [Status of Python Versions](https://devguide.python.org/versions/), y se ha decidido tomar las que sean más interesantes para el testeo de la aplicación:
 
-* **Python 3.11.1:** Esta versión es la que está en el *Contenedor Docker*, por lo que se hará esta comprobación en Cirrus. (Esta versión es la última lanzada que es estable).
-* **Python 3.7:** Esta versión es la más antigua que dispone de soporte, estando a punto de terminar su ciclo en 2023.
-* **Python 3.12:** Esta versión es inestable, pues está todavía en desarrollo y se espera su lanzamiento oficial a partir de 2024.
+* **Python 3.11.1:** Esta versión es la que está en el *Contenedor Docker*, por lo que se hará esta comprobación en GitHub Actions. (Esta versión es la última lanzada que es estable).
+* **Python 3.7:** Esta versión es la más antigua que dispone de soporte, estando a punto de terminar su ciclo en 2023. Se hará la comprobación en Cirrus CI.
+* **Python 3.12:** Esta versión es inestable, pues está todavía en desarrollo y se espera su lanzamiento oficial a partir de 2024. Se hará la comprobación en Cirrus CI.
