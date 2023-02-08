@@ -1,6 +1,6 @@
 task:
    name: Verify Tests
-   skip: "!changesInclude('**.py')"
+   skip: "!changesInclude('**.py','pyproject.toml','poetry.lock')"
    env:
       matrix:
          - PYTHON_VERSION: 3.7
