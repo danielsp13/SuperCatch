@@ -6,10 +6,8 @@ task:
          - PYTHON_VERSION: 3.7
          - PYTHON_VERSION: 3.12-rc
    container:
-      image: python:${PYTHON_VERSION}-slim
+      image: python:${PYTHON_VERSION}-buster
    install_script: |
-     apt-get update
-     apt-get install gcc libffi-dev -y
      pip install poetry poethepoet --no-cache-dir
      poe install
      poe nltk_data

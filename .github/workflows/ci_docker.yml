@@ -4,6 +4,10 @@ on:
   push:
       paths:
          - '**.py'
+         - 'pyproject.toml'
+         - 'poetry.lock'
+         - '.cirrus.yml'
+         - '.github/workflows/ci_docker.yml'
          
 jobs:
   docker_tests:
