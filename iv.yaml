@@ -7,3 +7,6 @@ automatizar:
 test:
   - tests/test_pln.py
   - tests/test_corrector.py
+CI:
+  - .cirrus.yml
+

@@ -4,9 +4,6 @@ import re
 from nltk.corpus import stopwords
 from supercatch.pln import *
 
-#=====================================================================
-
-# Respuestas para pruebas
 listaResp = ["Esta es una respusta de ejemplo.",
 "   Esta   es   otra   respuesta    . ",
 "¿Qué se supone    que debo responder aquí?",
@@ -14,18 +11,13 @@ listaResp = ["Esta es una respusta de ejemplo.",
 "eStA eS   uNA   RESPuesTA MuY DIFÍCIL de leeR. ¿Sí?",
 "dEntRO de un AÑO, será 2024."]
 
-# Respuestas para pruebas (excepciones)
 listaRespExc = ["",
 "        ",
 "?!;.-·¡.;!/,¿",
 " ¿?! !' ?  ! ; . - ·¡ .;! /,¿",
 "el, los las unas de para   sobre durante en."]
 
-#=====================================================================
-
 tokensResp = list(map(lambda resp: obtenerTokens(resp), listaResp))
-
-#=====================================================================
 
 
 """
@@ -74,7 +66,6 @@ def test_list_tokens_without_capital_letters():
 	for tokens in tokensResp:
 		assert_that(list(filter(lambda tk: re.search(PATTERN,tk), tokens)), has_length(0))
 		
-#=====================================================================
 
 """
 Bloque de tests que verifican el funcionamiento de la eliminacion

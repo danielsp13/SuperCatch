@@ -3,9 +3,6 @@ from hamcrest import *
 from supercatch.corrector import *
 from supercatch.examen import Modelo, Examen
 
-#=====================================================================
-
-# Modelo de examen
 respModelo = ["'Clarín', es el apodo de Leopoldo Alas y escribió 'La Regenta'.",
 "La 'ley sálica' la redactó Felipe V y permitió acceder al trono a las mujeres.",
 "La matería está constituida por átomos que están formados por protones, electrones y neutrones.",
@@ -13,7 +10,6 @@ respModelo = ["'Clarín', es el apodo de Leopoldo Alas y escribió 'La Regenta'.
 
 modelo = Modelo(respModelo)
 
-# Respuestas de alumnos
 
 respExamen = [" La  RegenTa la escRibio leoPoLdó alas    y su   apodo fue Clarin.  ",
 "Felipe IV redacto la ley salica y sirve para el acceso al trono a las mujeres.",
@@ -22,13 +18,8 @@ respExamen = [" La  RegenTa la escRibio leoPoLdó alas    y su   apodo fue Clari
 
 examen = Examen(respExamen)
 
-#=====================================================================
-
 calificarExamen(examen,modelo)
 calificaciones = examen.getCalificaciones()
-
-
-#=====================================================================
 
 
 def test_calificaciones():

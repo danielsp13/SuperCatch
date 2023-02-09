@@ -1,0 +1,18 @@
+task:
+   name: Verify Tests
+   skip: "!changesInclude('**.py','pyproject.toml','poetry.lock')"
+   env:
+      matrix:
+         - PYTHON_VERSION: 3.7
+         - PYTHON_VERSION: 3.12-rc
+   container:
+      image: python:${PYTHON_VERSION}-buster
+   pip_cache:
+      folder: ~/.cache/pip
+      populate_script:
+         - pip install rapidfuzz
+   install_script: |
+     pip install poetry poethepoet
+     poe install
+     poe nltk_data
+   test_script: poe test
