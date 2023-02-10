@@ -57,6 +57,7 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 
 
 * :twisted_rightwards_arrows: [Integración Continua](docs/sistemas_ci.md) : Se especifican los criterios para la elección de los sistemas de integración continua, y lo que realizan. **GitHub Actions**, **Cirrus CI**.
+* :book: [Biblioteca de Logging](docs/biblioteca-logging.md): Se especifican los criterios para la elección de biblioteca de registros (logging). **loguru**
 
 ****
 
