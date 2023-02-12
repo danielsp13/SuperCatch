@@ -21,9 +21,3 @@
 ### :bust_in_silhouette: Carolina Hernández
 
 > Carolina Hernández, 40 años, profesora de Biología en un instituto (nivel Bachillerato). Algunos exámenes de su asignatura no son evaluables con una modalidad tipo test, y ha notado que en este tipo de controles el rendimiento de sus alumnos es más bajo, pero no le es posible preparar tantas pruebas que permitan hacer un mejor seguimiento de sus alumnos, y mucho menos ver en qué tipo de preguntas presentan dificultades.
-
-
-
-### :bust_in_silhouette: Irene Pérez
-
-> Irene Pérez, 16 años, alumna de Segundo de Bachillerato. En esta última etapa pre-universitaria y con la Selectividad por delante, le preocupa la preparación que pueda tener de cara a los exámenes y obtener una buena media al acabar el curso, pero no dispone de las herramientas suficientes para poder entrenar por su cuenta o al menos, guiada por sus profesores.

@@ -65,7 +65,7 @@ Todo lo que se necesita saber acerca del proyecto se encuentra en las siguientes
 Para instalar el gestor de dependencias y de tareas, en un ámbito global al usuario:
 
 ~~~bash
-$ pip install -r requirements.txt
+$ pip install poetry poethepoet
 ~~~
 
 

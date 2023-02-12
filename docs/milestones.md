@@ -17,7 +17,6 @@ Se deben definir clases que modelen adecuadamente a las entidades de: usuarios, 
 *Historias de Usuario identificadas con este milestone:*
 
 * *[HU01]: Dolores quiere agilizar la tarea de corrección de exámenes*.
-* *[HU03] Irene necesita entrenar para sus exámenes*
 
 ****
 
